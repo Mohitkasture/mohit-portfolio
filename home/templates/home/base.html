@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mohit Kasture — Python and Django developer in Ahmedabad. REST APIs, PostgreSQL, AppUnik.">
+  <meta name="theme-color" content="#08090b">
+  <title>Mohit Kasture — Python &amp; Django Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <canvas class="net-bg" id="net-bg" aria-hidden="true"></canvas>
+  {% block content %}{% endblock %}
+  <script src="{% static 'home/js/main.js' %}" defer></script>
+</body>
+</html>
