@@ -11,12 +11,32 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 import dj_database_url
 from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+def env(name, default='', cast=None):
+    """Read env vars, then Render Secret Files at /etc/secrets/<name>."""
+    value = config(name, default='')
+    if value in (None, ''):
+        for path in (Path('/etc/secrets') / name, BASE_DIR / name):
+            if path.is_file():
+                value = path.read_text(encoding='utf-8').strip()
+                break
+    if value in (None, ''):
+        value = default
+    if cast is bool:
+        if isinstance(value, bool):
+            return value
+        return str(value).strip().lower() in {'1', 'true', 'yes', 'on'}
+    if cast is int:
+        return int(value) if str(value).strip() else default
+    return value
 
 
 # Quick-start development settings - unsuitable for production
@@ -37,9 +57,14 @@ ALLOWED_HOSTS = [
 
 CSRF_TRUSTED_ORIGINS = [
     origin.strip()
-    for origin in config('CSRF_TRUSTED_ORIGINS', default='').split(',')
+    for origin in config(
+        'CSRF_TRUSTED_ORIGINS',
+        default='https://mohit-portfolio-0vmy.onrender.com',
+    ).split(',')
     if origin.strip()
 ]
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 # Application definition
@@ -156,13 +181,13 @@ STORAGES = {
     },
 }
 
-CONTACT_EMAIL = config(
+CONTACT_EMAIL = env(
     'CONTACT_EMAIL',
     default='mkymohitkumaryadav0@gmail.com',
 )
-SMTP_USER = config('EMAIL_HOST_USER', default='').strip()
-SMTP_PASSWORD = config('EMAIL_HOST_PASSWORD', default='').replace(' ', '').strip()
-DEFAULT_FROM_EMAIL = config(
+SMTP_USER = env('EMAIL_HOST_USER', default='').strip()
+SMTP_PASSWORD = env('EMAIL_HOST_PASSWORD', default='').replace(' ', '').strip()
+DEFAULT_FROM_EMAIL = env(
     'DEFAULT_FROM_EMAIL',
     default=SMTP_USER or 'portfolio@localhost',
 )
@@ -173,15 +198,29 @@ DEFAULT_FROM_EMAIL = config(
 # Without them, Django only prints the message to server logs.
 
 if SMTP_USER and SMTP_PASSWORD:
+    email_host = env('EMAIL_HOST', default='smtp.gmail.com')
+    email_port = env('EMAIL_PORT', default=465, cast=int)
+    use_ssl = env('EMAIL_USE_SSL', default=False, cast=bool)
+    use_tls = env('EMAIL_USE_TLS', default=True, cast=bool)
+    # Render often drops Gmail on port 587 until gunicorn times out (HTTP 500).
+    if os.environ.get('RENDER') and 'gmail.com' in email_host and email_port == 587:
+        email_port = 465
+        use_ssl = True
+        use_tls = False
+    elif email_port == 465:
+        use_ssl = True
+        use_tls = False
     MAILERS = {
         'default': {
             'BACKEND': 'django.core.mail.backends.smtp.EmailBackend',
             'OPTIONS': {
-                'host': config('EMAIL_HOST', default='smtp.gmail.com'),
-                'port': config('EMAIL_PORT', default=587, cast=int),
+                'host': email_host,
+                'port': email_port,
                 'username': SMTP_USER,
                 'password': SMTP_PASSWORD,
-                'use_tls': config('EMAIL_USE_TLS', default=True, cast=bool),
+                'use_tls': use_tls,
+                'use_ssl': use_ssl,
+                'timeout': 8,
             },
         },
     }
