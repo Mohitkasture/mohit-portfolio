@@ -1,9 +1,12 @@
+import logging
 import smtplib
 
 from django.conf import settings
 from django.contrib import messages
 from django.core.mail import EmailMessage
 from django.shortcuts import redirect, render
+
+logger = logging.getLogger(__name__)
 
 
 def index(request):
@@ -21,11 +24,15 @@ def index(request):
             )
             try:
                 mail.send(fail_silently=False)
-            except (OSError, smtplib.SMTPException):
-                messages.error(
-                    request,
-                    "Message could not be sent. Please email me directly.",
-                )
+            except (OSError, smtplib.SMTPException) as exc:
+                logger.exception("Contact form email failed")
+                if settings.DEBUG:
+                    messages.error(request, f"Message could not be sent: {exc}")
+                else:
+                    messages.error(
+                        request,
+                        "Message could not be sent. Please email me directly.",
+                    )
             else:
                 messages.success(request, "Thanks — I’ll get back to you.")
         else:

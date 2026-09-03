@@ -160,8 +160,8 @@ CONTACT_EMAIL = config(
     'CONTACT_EMAIL',
     default='mkymohitkumaryadav0@gmail.com',
 )
-SMTP_USER = config('EMAIL_HOST_USER', default='')
-SMTP_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
+SMTP_USER = config('EMAIL_HOST_USER', default='').strip()
+SMTP_PASSWORD = config('EMAIL_HOST_PASSWORD', default='').replace(' ', '').strip()
 DEFAULT_FROM_EMAIL = config(
     'DEFAULT_FROM_EMAIL',
     default=SMTP_USER or 'portfolio@localhost',
