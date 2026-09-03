@@ -156,13 +156,38 @@ STORAGES = {
     },
 }
 
-DEFAULT_FROM_EMAIL = 'portfolio@localhost'
+CONTACT_EMAIL = config(
+    'CONTACT_EMAIL',
+    default='mkymohitkumaryadav0@gmail.com',
+)
+SMTP_USER = config('EMAIL_HOST_USER', default='')
+SMTP_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
+DEFAULT_FROM_EMAIL = config(
+    'DEFAULT_FROM_EMAIL',
+    default=SMTP_USER or 'portfolio@localhost',
+)
 
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
+# Set EMAIL_HOST_USER + EMAIL_HOST_PASSWORD to send contact form mail via SMTP.
+# Without them, Django only prints the message to server logs.
 
-MAILERS = {
-    'default': {
-        'BACKEND': 'django.core.mail.backends.console.EmailBackend',
-    },
-}
+if SMTP_USER and SMTP_PASSWORD:
+    MAILERS = {
+        'default': {
+            'BACKEND': 'django.core.mail.backends.smtp.EmailBackend',
+            'OPTIONS': {
+                'host': config('EMAIL_HOST', default='smtp.gmail.com'),
+                'port': config('EMAIL_PORT', default=587, cast=int),
+                'username': SMTP_USER,
+                'password': SMTP_PASSWORD,
+                'use_tls': config('EMAIL_USE_TLS', default=True, cast=bool),
+            },
+        },
+    }
+else:
+    MAILERS = {
+        'default': {
+            'BACKEND': 'django.core.mail.backends.console.EmailBackend',
+        },
+    }

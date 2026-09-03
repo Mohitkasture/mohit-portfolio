@@ -137,33 +137,33 @@ code {
 .nav__menu {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.4rem;
   font-family: var(--mono);
-  font-size: 0.88rem;
+  font-size: 0.8rem;
 }
 
 .nav__menu a {
   text-decoration: none;
   color: var(--muted);
   position: relative;
-  padding-bottom: 0.2rem;
-  transition: color 0.2s ease;
+  padding: 0.36rem 0.78rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
 .nav__menu a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 1.5px;
-  background: var(--accent);
-  transition: width 0.22s ease;
+  display: none;
 }
 
 .nav__menu a:hover,
 .nav__menu a:focus-visible {
   color: var(--accent);
+  border-color: rgba(212, 255, 63, 0.5);
+  background: var(--accent-dim);
 }
 
 .nav__resume::after {
@@ -261,16 +261,64 @@ code {
 }
 
 .portrait__cap {
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  color: var(--muted);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-top: 0.55rem;
-  margin-left: 2.75rem;
+  margin-top: 0.2rem;
+  margin-left: 2.25rem;
   position: relative;
   z-index: 2;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.name-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--muted);
+}
+
+.name-badge__circle {
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--accent);
+  border-radius: 50%;
+  margin-right: -9px;
+  background: var(--bg);
+  flex-shrink: 0;
+  z-index: 1;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.name-badge__rect {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.42rem 0.9rem 0.42rem 1.05rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.name-badge:hover,
+.name-badge:focus-visible {
+  color: var(--accent);
+}
+
+.name-badge:hover .name-badge__rect,
+.name-badge:focus-visible .name-badge__rect {
+  color: var(--accent);
+  border-color: rgba(212, 255, 63, 0.5);
+  background: var(--accent-dim);
+}
+
+.name-badge:hover .name-badge__circle,
+.name-badge:focus-visible .name-badge__circle {
+  background: var(--accent);
+  transform: scale(1.08);
+  box-shadow: 0 0 12px rgba(212, 255, 63, 0.4);
 }
 
 .hero__glow {
@@ -1089,7 +1137,7 @@ main,
   }
 
   .portrait__frame {
-    height: 640px;
+    height: 628px;
   }
 
   .split {
@@ -1121,10 +1169,15 @@ main,
     position: fixed;
     inset: var(--nav-h) 0 auto 0;
     flex-direction: column;
+    align-items: stretch;
     background: rgba(8, 9, 11, 0.96);
     padding: 1.2rem 1.5rem 1.6rem;
     border-bottom: 1px solid var(--border);
     display: none;
+  }
+
+  .nav__menu a {
+    text-align: center;
   }
 
   .nav.is-open .nav__menu {
