@@ -133,4 +133,67 @@
     cancelAnimationFrame(raf);
     raf = requestAnimationFrame(tick);
   }
+
+  const form = document.querySelector(".contact-form");
+  if (form && form.dataset.web3formsKey) {
+    const toastHost = document.getElementById("contact-toast");
+    const contactEmail = form.dataset.contactEmail || "mkymohitkumaryadav0@gmail.com";
+    const showToast = (ok) => {
+      if (!toastHost) return;
+      toastHost.innerHTML = ok
+        ? `<div class="form-toast form-toast--success" role="status">
+            <span class="form-toast__mark" aria-hidden="true">✓</span>
+            <div>
+              <p class="form-toast__title">Your message was sent</p>
+              <p>It was delivered to <strong>Mohit Kasture</strong> at <a href="mailto:${contactEmail}">${contactEmail}</a>.</p>
+              <p>I’ll reply to your email soon.</p>
+            </div>
+          </div>`
+        : `<div class="form-toast form-toast--error" role="status">
+            <span class="form-toast__mark" aria-hidden="true">!</span>
+            <div>
+              <p class="form-toast__title">Message not sent</p>
+              <p>Message could not be sent. Please email <a href="mailto:${contactEmail}">${contactEmail}</a> directly.</p>
+            </div>
+          </div>`;
+      toastHost.scrollIntoView({ behavior: "smooth", block: "center" });
+    };
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const button = form.querySelector("button[type=submit]");
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+      if (!name || !email || !message) return;
+      if (button) button.disabled = true;
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            access_key: form.dataset.web3formsKey,
+            name,
+            email,
+            message,
+            subject: "Portfolio message from " + name,
+            from_name: "Mohit Kasture Portfolio",
+            replyto: email,
+            botcheck: false,
+          }),
+        });
+        const result = await response.json();
+        if (!result.success) throw new Error(result.message || "Send failed");
+        showToast(true);
+        form.reset();
+      } catch (err) {
+        showToast(false);
+      } finally {
+        if (button) button.disabled = false;
+      }
+    });
+  }
 })();

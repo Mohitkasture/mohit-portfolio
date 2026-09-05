@@ -9,22 +9,18 @@ from django.core.mail import EmailMessage
 
 logger = logging.getLogger(__name__)
 
-WEB3FORMS_URL = "https://api.web3forms.com/submit"
 RESEND_URL = "https://api.resend.com/emails"
 
 
 def send_contact_message(name, email, body):
-    """Send via HTTPS first (Render blocks Gmail SMTP), then local SMTP."""
-    if settings.WEB3FORMS_ACCESS_KEY:
-        _send_web3forms(name, email, body)
-        return
+    """Send via Resend HTTPS, or local SMTP. Web3Forms is client-side only."""
     if settings.RESEND_API_KEY:
         _send_resend(name, email, body)
         return
     if settings.SMTP_USER and settings.SMTP_PASSWORD and not os.environ.get("RENDER"):
         _send_smtp(name, email, body)
         return
-    raise RuntimeError("No HTTPS mail provider is configured")
+    raise RuntimeError("No mail provider is configured")
 
 
 def _post_json(url, payload, headers=None, timeout=12):
@@ -41,23 +37,6 @@ def _post_json(url, payload, headers=None, timeout=12):
         detail = exc.read().decode("utf-8", errors="replace")
         raise RuntimeError(detail or str(exc)) from exc
     return json.loads(raw) if raw else {}
-
-
-def _send_web3forms(name, email, body):
-    result = _post_json(
-        WEB3FORMS_URL,
-        {
-            "access_key": settings.WEB3FORMS_ACCESS_KEY,
-            "name": name,
-            "email": email,
-            "message": body,
-            "subject": f"Portfolio message from {name}",
-            "from_name": "Mohit Kasture Portfolio",
-            "replyto": email,
-        },
-    )
-    if not result.get("success"):
-        raise RuntimeError(result.get("message") or "Web3Forms rejected the message")
 
 
 def _send_resend(name, email, body):

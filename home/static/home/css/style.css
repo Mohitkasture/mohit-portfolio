@@ -920,6 +920,10 @@ main,
   gap: 0.45rem;
 }
 
+.hp-field {
+  display: none !important;
+}
+
 .contact-form label {
   font-size: 0.85rem;
   color: var(--muted);
