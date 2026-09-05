@@ -135,47 +135,104 @@
   }
 
   const form = document.querySelector(".contact-form");
-  if (form && form.dataset.web3formsKey) {
-    const resultHost = document.getElementById("contact-result");
-    const contactEmail = form.dataset.contactEmail || "mkymohitkumaryadav0@gmail.com";
-    const showResult = (ok, visitorName) => {
-      if (!resultHost) return;
-      const first = (visitorName || "").split(" ")[0].replace(/[<>&"'`]/g, "");
-      const thanks = first
-        ? `Thanks, ${first}.`
-        : "Thanks — I got it.";
-      resultHost.hidden = false;
-      resultHost.innerHTML = ok
-        ? `<div class="form-result form-result--ok" role="status">
-            <span class="form-result__icon" aria-hidden="true">✓</span>
-            <h3>${thanks}</h3>
-            <p>Your message is in. I’ll reply to your email soon.</p>
-            <button class="btn btn--ghost" type="button" id="send-another">Send another message</button>
-          </div>`
-        : `<div class="form-result form-result--error" role="status">
-            <span class="form-result__icon" aria-hidden="true">!</span>
-            <h3>Couldn’t send that</h3>
-            <p>Please email me directly at <a href="mailto:${contactEmail}">${contactEmail}</a>.</p>
-          </div>`;
-      if (ok) form.hidden = true;
-      const again = document.getElementById("send-another");
-      if (again) {
-        again.addEventListener("click", () => {
-          resultHost.hidden = true;
-          resultHost.innerHTML = "";
-          form.hidden = false;
-        });
+  const successEl = document.getElementById("contact-success");
+  const errorEl = document.getElementById("contact-error");
+  const thanksEl = document.getElementById("contact-thanks");
+  const sendAnother = document.getElementById("send-another");
+  const submitBtn = document.getElementById("contact-submit");
+
+  if (form) {
+    const defaultLabel = (submitBtn && submitBtn.textContent.trim()) || "Send Message";
+    const contactEmail = form.dataset.contactEmail || "";
+    const nameInput = form.querySelector("#name");
+    const emailInput = form.querySelector("#email");
+    const messageInput = form.querySelector("#message");
+    let submitting = false;
+
+    const firstName = (value) => (value || "").trim().split(/\s+/)[0] || "";
+
+    const setSubmitting = (on) => {
+      submitting = on;
+      form.setAttribute("aria-busy", on ? "true" : "false");
+      if (!submitBtn) return;
+      submitBtn.disabled = on;
+      submitBtn.textContent = on ? "Sending..." : defaultLabel;
+    };
+
+    const panel = document.getElementById("contact-panel");
+
+    const hideError = () => {
+      if (!errorEl) return;
+      errorEl.hidden = true;
+      errorEl.replaceChildren();
+    };
+
+    const showError = (text) => {
+      if (successEl) successEl.hidden = true;
+      if (panel) panel.classList.remove("is-success");
+      form.hidden = false;
+      form.removeAttribute("aria-hidden");
+      if (!errorEl) return;
+      errorEl.hidden = false;
+      errorEl.replaceChildren();
+      errorEl.append(text);
+      if (contactEmail) {
+        errorEl.append(" Please try again, or email ");
+        const link = document.createElement("a");
+        link.href = "mailto:" + contactEmail;
+        link.textContent = contactEmail;
+        errorEl.append(link);
+        errorEl.append(".");
       }
     };
 
+    const showSuccess = (visitorName) => {
+      hideError();
+      const first = firstName(visitorName);
+      if (thanksEl) {
+        thanksEl.textContent = first ? `Thanks, ${first}.` : "Thanks — I got it.";
+      }
+      if (successEl) successEl.hidden = false;
+      if (panel) panel.classList.add("is-success");
+      form.hidden = true;
+      form.setAttribute("aria-hidden", "true");
+    };
+
+    const showFormAgain = () => {
+      if (successEl) successEl.hidden = true;
+      if (panel) panel.classList.remove("is-success");
+      form.hidden = false;
+      form.removeAttribute("aria-hidden");
+      hideError();
+      form.reset();
+      setSubmitting(false);
+      if (nameInput) nameInput.focus();
+    };
+
+    if (sendAnother) {
+      sendAnother.addEventListener("click", showFormAgain);
+    }
+
     form.addEventListener("submit", async (event) => {
-      event.preventDefault();
-      const button = form.querySelector("button[type=submit]");
-      const name = form.name.value.trim();
-      const email = form.email.value.trim();
-      const message = form.message.value.trim();
+      if (submitting) {
+        event.preventDefault();
+        return;
+      }
+
+      const name = (nameInput && nameInput.value.trim()) || "";
+      const email = (emailInput && emailInput.value.trim()) || "";
+      const message = (messageInput && messageInput.value.trim()) || "";
       if (!name || !email || !message) return;
-      if (button) button.disabled = true;
+
+      hideError();
+
+      if (!form.dataset.web3formsKey) {
+        setSubmitting(true);
+        return;
+      }
+
+      event.preventDefault();
+      setSubmitting(true);
       try {
         const response = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
@@ -196,12 +253,11 @@
         });
         const result = await response.json();
         if (!result.success) throw new Error(result.message || "Send failed");
-        showResult(true, name);
-        form.reset();
+        showSuccess(name);
       } catch (err) {
-        showResult(false);
+        showError("Message could not be sent.");
       } finally {
-        if (button) button.disabled = false;
+        setSubmitting(false);
       }
     });
   }
