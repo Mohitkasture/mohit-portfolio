@@ -363,39 +363,32 @@
             </li>
           </ul>
         </article>
-        <article class="contact-card reveal" id="contact-panel">
-          {% if messages %}
-            {% for message in messages %}
-              <div class="form-result {% if 'error' in message.tags %}form-result--error{% else %}form-result--ok{% endif %}" role="status">
-                <span class="form-result__icon" aria-hidden="true">{% if 'error' in message.tags %}!{% else %}✓{% endif %}</span>
-                {% if 'error' in message.tags %}
-                  <h3>Couldn’t send that</h3>
-                  <p>{{ message }}</p>
-                {% else %}
-                  <h3>Thanks — I got it</h3>
-                  <p>Your message is in. I’ll reply to your email soon.</p>
-                {% endif %}
-              </div>
-            {% endfor %}
-          {% endif %}
-          <div id="contact-result" hidden></div>
+        <article class="contact-card reveal{% if form_success %} is-success{% endif %}" id="contact-panel">
+          <div id="contact-success" class="form-result form-result--ok" role="status" aria-live="polite" {% if not form_success %}hidden{% endif %}>
+            <span class="form-result__icon" aria-hidden="true">✓</span>
+            <h3 id="contact-thanks">{% if thanks_name %}Thanks, {{ thanks_name }}.{% else %}Thanks — I got it.{% endif %}</h3>
+            <p>Your message is in. I’ll reply to your email soon.</p>
+            <button class="btn btn--ghost" type="button" id="send-another">Send another message</button>
+          </div>
           <form
             class="contact-form"
+            id="contact-form"
             method="post"
             action="{% url 'home:index' %}#contact"
             {% if web3forms_access_key %}data-web3forms-key="{{ web3forms_access_key }}"{% endif %}
             data-contact-email="{{ contact_email }}"
-            {% if messages %}{% for message in messages %}{% if 'success' in message.tags %}hidden{% endif %}{% endfor %}{% endif %}
+            {% if form_success %}hidden aria-hidden="true"{% endif %}
           >
             {% csrf_token %}
             <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" class="hp-field">
             <label for="name">Your Name</label>
-            <input id="name" name="name" type="text" placeholder="Enter your name" required>
+            <input id="name" name="name" type="text" placeholder="Enter your name" value="{{ form_name }}" required>
             <label for="email">Your Email</label>
-            <input id="email" name="email" type="email" placeholder="Enter your email" required>
+            <input id="email" name="email" type="email" placeholder="Enter your email" value="{{ form_email }}" required>
             <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
-            <button class="btn btn--primary btn--block" type="submit">Send Message</button>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message..." required>{{ form_message }}</textarea>
+            <p id="contact-error" class="form-inline-error" role="alert" {% if not form_error %}hidden{% endif %}>{% if form_error %}{{ form_error }}{% endif %}</p>
+            <button class="btn btn--primary btn--block" type="submit" id="contact-submit">Send Message</button>
           </form>
         </article>
       </div>
