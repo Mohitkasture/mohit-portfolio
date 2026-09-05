@@ -320,6 +320,7 @@
         <p class="eyebrow">07 — contact</p>
         <h2>Contact <span class="text-accent">Me</span></h2>
       </div>
+      <div id="contact-toast">
       {% if messages %}
         {% for message in messages %}
           <div class="form-toast {% if 'error' in message.tags %}form-toast--error{% else %}form-toast--success{% endif %}" role="status">
@@ -337,6 +338,7 @@
           </div>
         {% endfor %}
       {% endif %}
+      </div>
       <div class="contact-grid">
         <article class="contact-card reveal">
           <h3>Let’s Connect</h3>
@@ -381,8 +383,15 @@
           </ul>
         </article>
         <article class="contact-card reveal">
-          <form class="contact-form" method="post" action="{% url 'home:index' %}#contact">
+          <form
+            class="contact-form"
+            method="post"
+            action="{% url 'home:index' %}#contact"
+            {% if web3forms_access_key %}data-web3forms-key="{{ web3forms_access_key }}"{% endif %}
+            data-contact-email="{{ contact_email }}"
+          >
             {% csrf_token %}
+            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" class="hp-field">
             <label for="name">Your Name</label>
             <input id="name" name="name" type="text" placeholder="Enter your name" required>
             <label for="email">Your Email</label>

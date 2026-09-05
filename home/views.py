@@ -16,6 +16,7 @@ def _contact_page(request):
         {
             "contact_name": "Mohit Kasture",
             "contact_email": settings.CONTACT_EMAIL,
+            "web3forms_access_key": settings.WEB3FORMS_ACCESS_KEY,
         },
     )
 
