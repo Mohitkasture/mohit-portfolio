@@ -990,6 +990,49 @@ main,
   color: var(--text);
 }
 
+.form-result {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: 0.55rem;
+  padding: 1.4rem 0.6rem 0.4rem;
+}
+
+.form-result h3 {
+  margin: 0.2rem 0 0;
+  font-size: 1.35rem;
+}
+
+.form-result p {
+  margin: 0;
+  color: var(--muted);
+  max-width: 28ch;
+}
+
+.form-result a {
+  color: var(--accent);
+}
+
+.form-result .btn {
+  margin-top: 0.7rem;
+}
+
+.form-result__icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--accent);
+  color: #111;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.form-result--error .form-result__icon {
+  background: #f87171;
+}
+
 .form-toast p {
   margin: 0.15rem 0 0;
   color: var(--muted);

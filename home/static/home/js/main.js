@@ -136,27 +136,36 @@
 
   const form = document.querySelector(".contact-form");
   if (form && form.dataset.web3formsKey) {
-    const toastHost = document.getElementById("contact-toast");
+    const resultHost = document.getElementById("contact-result");
     const contactEmail = form.dataset.contactEmail || "mkymohitkumaryadav0@gmail.com";
-    const showToast = (ok) => {
-      if (!toastHost) return;
-      toastHost.innerHTML = ok
-        ? `<div class="form-toast form-toast--success" role="status">
-            <span class="form-toast__mark" aria-hidden="true">✓</span>
-            <div>
-              <p class="form-toast__title">Your message was sent</p>
-              <p>It was delivered to <strong>Mohit Kasture</strong> at <a href="mailto:${contactEmail}">${contactEmail}</a>.</p>
-              <p>I’ll reply to your email soon.</p>
-            </div>
+    const showResult = (ok, visitorName) => {
+      if (!resultHost) return;
+      const first = (visitorName || "").split(" ")[0].replace(/[<>&"'`]/g, "");
+      const thanks = first
+        ? `Thanks, ${first}.`
+        : "Thanks — I got it.";
+      resultHost.hidden = false;
+      resultHost.innerHTML = ok
+        ? `<div class="form-result form-result--ok" role="status">
+            <span class="form-result__icon" aria-hidden="true">✓</span>
+            <h3>${thanks}</h3>
+            <p>Your message is in. I’ll reply to your email soon.</p>
+            <button class="btn btn--ghost" type="button" id="send-another">Send another message</button>
           </div>`
-        : `<div class="form-toast form-toast--error" role="status">
-            <span class="form-toast__mark" aria-hidden="true">!</span>
-            <div>
-              <p class="form-toast__title">Message not sent</p>
-              <p>Message could not be sent. Please email <a href="mailto:${contactEmail}">${contactEmail}</a> directly.</p>
-            </div>
+        : `<div class="form-result form-result--error" role="status">
+            <span class="form-result__icon" aria-hidden="true">!</span>
+            <h3>Couldn’t send that</h3>
+            <p>Please email me directly at <a href="mailto:${contactEmail}">${contactEmail}</a>.</p>
           </div>`;
-      toastHost.scrollIntoView({ behavior: "smooth", block: "center" });
+      if (ok) form.hidden = true;
+      const again = document.getElementById("send-another");
+      if (again) {
+        again.addEventListener("click", () => {
+          resultHost.hidden = true;
+          resultHost.innerHTML = "";
+          form.hidden = false;
+        });
+      }
     };
 
     form.addEventListener("submit", async (event) => {
@@ -187,10 +196,10 @@
         });
         const result = await response.json();
         if (!result.success) throw new Error(result.message || "Send failed");
-        showToast(true);
+        showResult(true, name);
         form.reset();
       } catch (err) {
-        showToast(false);
+        showResult(false);
       } finally {
         if (button) button.disabled = false;
       }

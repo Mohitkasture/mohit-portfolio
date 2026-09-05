@@ -320,25 +320,6 @@
         <p class="eyebrow">07 — contact</p>
         <h2>Contact <span class="text-accent">Me</span></h2>
       </div>
-      <div id="contact-toast">
-      {% if messages %}
-        {% for message in messages %}
-          <div class="form-toast {% if 'error' in message.tags %}form-toast--error{% else %}form-toast--success{% endif %}" role="status">
-            <span class="form-toast__mark" aria-hidden="true">{% if 'error' in message.tags %}!{% else %}✓{% endif %}</span>
-            <div>
-              {% if 'error' in message.tags %}
-                <p class="form-toast__title">Message not sent</p>
-                <p>{{ message }}</p>
-              {% else %}
-                <p class="form-toast__title">Your message was sent</p>
-                <p>It was delivered to <strong>{{ contact_name|default:"Mohit Kasture" }}</strong>{% if contact_email %} at <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>{% endif %}.</p>
-                <p>I’ll reply to your email soon.</p>
-              {% endif %}
-            </div>
-          </div>
-        {% endfor %}
-      {% endif %}
-      </div>
       <div class="contact-grid">
         <article class="contact-card reveal">
           <h3>Let’s Connect</h3>
@@ -382,13 +363,29 @@
             </li>
           </ul>
         </article>
-        <article class="contact-card reveal">
+        <article class="contact-card reveal" id="contact-panel">
+          {% if messages %}
+            {% for message in messages %}
+              <div class="form-result {% if 'error' in message.tags %}form-result--error{% else %}form-result--ok{% endif %}" role="status">
+                <span class="form-result__icon" aria-hidden="true">{% if 'error' in message.tags %}!{% else %}✓{% endif %}</span>
+                {% if 'error' in message.tags %}
+                  <h3>Couldn’t send that</h3>
+                  <p>{{ message }}</p>
+                {% else %}
+                  <h3>Thanks — I got it</h3>
+                  <p>Your message is in. I’ll reply to your email soon.</p>
+                {% endif %}
+              </div>
+            {% endfor %}
+          {% endif %}
+          <div id="contact-result" hidden></div>
           <form
             class="contact-form"
             method="post"
             action="{% url 'home:index' %}#contact"
             {% if web3forms_access_key %}data-web3forms-key="{{ web3forms_access_key }}"{% endif %}
             data-contact-email="{{ contact_email }}"
+            {% if messages %}{% for message in messages %}{% if 'success' in message.tags %}hidden{% endif %}{% endfor %}{% endif %}
           >
             {% csrf_token %}
             <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" class="hp-field">

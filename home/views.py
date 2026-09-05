@@ -39,10 +39,7 @@ def index(request):
                         f"Message could not be sent. Please email {settings.CONTACT_EMAIL} directly.",
                     )
             else:
-                messages.success(
-                    request,
-                    f"Your message was sent to Mohit Kasture at {settings.CONTACT_EMAIL}. I’ll reply to you soon.",
-                )
+                messages.success(request, "Thanks — I got your message.")
         else:
             messages.error(request, "Please fill in all fields.")
         return redirect("/#contact")
