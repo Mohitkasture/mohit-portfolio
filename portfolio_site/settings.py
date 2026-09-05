@@ -185,6 +185,8 @@ CONTACT_EMAIL = env(
     'CONTACT_EMAIL',
     default='mkymohitkumaryadav0@gmail.com',
 )
+WEB3FORMS_ACCESS_KEY = env('WEB3FORMS_ACCESS_KEY', default='').strip()
+RESEND_API_KEY = env('RESEND_API_KEY', default='').strip()
 SMTP_USER = env('EMAIL_HOST_USER', default='').strip()
 SMTP_PASSWORD = env('EMAIL_HOST_PASSWORD', default='').replace(' ', '').strip()
 DEFAULT_FROM_EMAIL = env(
