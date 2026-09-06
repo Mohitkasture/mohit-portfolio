@@ -142,7 +142,8 @@
   const submitBtn = document.getElementById("contact-submit");
 
   if (form) {
-    const defaultLabel = (submitBtn && submitBtn.textContent.trim()) || "Send Message";
+    const submitLabel = submitBtn && submitBtn.querySelector(".btn__label");
+    const defaultLabel = (submitLabel && submitLabel.textContent.trim()) || "Send Message";
     const contactEmail = form.dataset.contactEmail || "";
     const nameInput = form.querySelector("#name");
     const emailInput = form.querySelector("#email");
@@ -156,7 +157,8 @@
       form.setAttribute("aria-busy", on ? "true" : "false");
       if (!submitBtn) return;
       submitBtn.disabled = on;
-      submitBtn.textContent = on ? "Sending..." : defaultLabel;
+      if (submitLabel) submitLabel.textContent = on ? "Sending..." : defaultLabel;
+      else submitBtn.textContent = on ? "Sending..." : defaultLabel;
     };
 
     const panel = document.getElementById("contact-panel");
@@ -186,12 +188,24 @@
       }
     };
 
+    const setThanksName = (visitorName) => {
+      if (!thanksEl) return;
+      const first = firstName(visitorName);
+      thanksEl.replaceChildren();
+      if (!first) {
+        thanksEl.textContent = "Thanks — I got it.";
+        return;
+      }
+      thanksEl.append("Thanks, ");
+      const nameSpan = document.createElement("span");
+      nameSpan.className = "text-accent";
+      nameSpan.textContent = first + ".";
+      thanksEl.append(nameSpan);
+    };
+
     const showSuccess = (visitorName) => {
       hideError();
-      const first = firstName(visitorName);
-      if (thanksEl) {
-        thanksEl.textContent = first ? `Thanks, ${first}.` : "Thanks — I got it.";
-      }
+      setThanksName(visitorName);
       if (successEl) successEl.hidden = false;
       if (panel) panel.classList.add("is-success");
       form.hidden = true;
@@ -212,6 +226,27 @@
     if (sendAnother) {
       sendAnother.addEventListener("click", showFormAgain);
     }
+
+    document.querySelectorAll("[data-copy]").forEach((el) => {
+      el.addEventListener("click", async () => {
+        const value = el.getAttribute("data-copy");
+        if (!value || !navigator.clipboard) return;
+        try {
+          await navigator.clipboard.writeText(value);
+          const label = el.querySelector(".connect-label");
+          if (!label) return;
+          const previous = label.textContent;
+          label.textContent = "Copied";
+          label.classList.add("is-copied");
+          window.setTimeout(() => {
+            label.textContent = previous;
+            label.classList.remove("is-copied");
+          }, 1400);
+        } catch (_) {
+          /* keep the default mailto/tel action */
+        }
+      });
+    });
 
     form.addEventListener("submit", async (event) => {
       if (submitting) {
