@@ -4,18 +4,59 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Mohit Kasture — Python and Django developer in Ahmedabad. REST APIs, PostgreSQL, AppUnik.">
-  <meta name="theme-color" content="#08090b">
   <title>Mohit Kasture — Python &amp; Django Developer</title>
+  <meta name="description" content="Mohit Kasture, Python and Django developer in Ahmedabad. Production-ready REST APIs, PostgreSQL, and backend systems.">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="Mohit Kasture">
+  <meta name="theme-color" content="#08090b">
+  <link rel="canonical" href="{{ site_url }}/">
+  <link rel="icon" href="{% static 'home/img/favicon.svg' %}" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mohit Kasture">
+  <meta property="og:title" content="Mohit Kasture — Python &amp; Django Developer">
+  <meta property="og:description" content="Python and Django developer building production-ready APIs and backend systems with PostgreSQL.">
+  <meta property="og:url" content="{{ site_url }}/">
+  <meta property="og:image" content="{{ site_url }}{% static 'home/img/mohit.png' %}">
+  <meta property="og:image:alt" content="Portrait of Mohit Kasture, Python and Django developer">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mohit Kasture — Python &amp; Django Developer">
+  <meta name="twitter:description" content="Python and Django developer building production-ready APIs and backend systems with PostgreSQL.">
+  <meta name="twitter:image" content="{{ site_url }}{% static 'home/img/mohit.png' %}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{% static 'home/css/style.css' %}?v=thanks5">
+  <link rel="stylesheet" href="{% static 'home/css/style.css' %}?v=polish1">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mohit Kasture",
+    "jobTitle": "Python and Django Developer",
+    "url": "{{ site_url }}/",
+    "email": "mailto:{{ contact_email }}",
+    "telephone": "+918817284530",
+    "image": "{{ site_url }}{% static 'home/img/mohit.png' %}",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Ahmedabad",
+      "addressRegion": "Gujarat",
+      "addressCountry": "IN"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/mohit-kasture-812a44261",
+      "https://github.com/Mohitkasture"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "AppUnik"
+    }
+  }
+  </script>
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
   <canvas class="net-bg" id="net-bg" aria-hidden="true"></canvas>
   {% block content %}{% endblock %}
-  <script src="{% static 'home/js/main.js' %}?v=thanks5" defer></script>
+  <script src="{% static 'home/js/main.js' %}?v=polish1" defer></script>
 </body>
 </html>

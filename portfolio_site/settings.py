@@ -185,6 +185,10 @@ CONTACT_EMAIL = env(
     'CONTACT_EMAIL',
     default='mkymohitkumaryadav0@gmail.com',
 )
+SITE_URL = env(
+    'SITE_URL',
+    default='https://mohit-portfolio-0vmy.onrender.com',
+).rstrip('/')
 WEB3FORMS_ACCESS_KEY = env('WEB3FORMS_ACCESS_KEY', default='').strip()
 RESEND_API_KEY = env('RESEND_API_KEY', default='').strip()
 SMTP_USER = env('EMAIL_HOST_USER', default='').strip()

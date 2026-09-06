@@ -1,0 +1,60 @@
+name: PR to main
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  test:
+    name: Django tests
+    runs-on: ubuntu-latest
+    env:
+      SECRET_KEY: ci-secret-not-for-production
+      DEBUG: "True"
+      DATABASE_URL: sqlite:///ci.sqlite3
+      ALLOWED_HOSTS: localhost,127.0.0.1
+      CSRF_TRUSTED_ORIGINS: http://127.0.0.1:8000
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Django system check
+        run: python manage.py check
+
+      - name: Run tests
+        run: python manage.py test --verbosity 2
+
+      - name: Collect static files
+        run: python manage.py collectstatic --no-input
+
+  groq-review:
+    name: Groq AI review
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Review PR with Groq and comment on GitHub
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GROQ_MODEL: ${{ vars.GROQ_MODEL }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python .github/scripts/groq_pr_review.py

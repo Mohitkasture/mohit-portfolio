@@ -32,24 +32,24 @@
     <div class="container hero__layout">
       <div class="hero__copy">
         <p class="eyebrow reveal">Python &amp; Django Developer · Ahmedabad</p>
-        <h1 class="hero__title reveal">Python &amp; Django Developer building scalable APIs and web backends</h1>
-        <p class="hero__sub reveal">Hands-on backend work: REST API design, PostgreSQL, and clean Django code — shipping features that connect frontend and backend in production.</p>
+        <h1 class="hero__title reveal">Python &amp; Django Developer building production-ready APIs and backend systems</h1>
+        <p class="hero__sub reveal">Python, Django, REST APIs, and PostgreSQL — backend systems that frontend and third-party clients can rely on.</p>
         <div class="hero__cta reveal">
           <a class="btn btn--primary" href="#projects">View Projects</a>
-          <a class="btn btn--ghost" href="{% static 'home/files/Mohit-Kasture-resume.pdf' %}" target="_blank" rel="noopener noreferrer">View CV</a>
-          <a class="btn btn--ghost" href="https://mohit-portfolio-0vmy.onrender.com/" target="_blank" rel="noopener noreferrer">Live site</a>
+          <a class="btn btn--ghost" href="{% static 'home/files/Mohit-Kasture-resume.pdf' %}" target="_blank" rel="noopener noreferrer">View Resume</a>
+          <a class="btn btn--ghost" href="https://github.com/Mohitkasture" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a class="btn btn--ghost" href="#contact">Get in Touch</a>
         </div>
         <ul class="hero__meta reveal">
           <li><span>Stack</span> Python · Django · PostgreSQL</li>
-          <li><span>Focus</span> REST APIs · data · integrations</li>
+          <li><span>Focus</span> REST APIs · backend systems</li>
           <li><span>Now</span> AppUnik · Ahmedabad</li>
         </ul>
       </div>
       <figure class="portrait reveal">
         <div class="portrait__glow" aria-hidden="true"></div>
         <div class="portrait__frame">
-          <img src="{% static 'home/img/mohit.png' %}" alt="Mohit Kasture, Python and Django developer" width="467" height="851">
+          <img src="{% static 'home/img/mohit.png' %}" alt="Mohit Kasture, Python and Django developer" width="467" height="851" fetchpriority="high" decoding="async">
         </div>
         <figcaption class="portrait__cap">
           <a class="name-badge" href="#about">
@@ -68,13 +68,13 @@
         <h2>Backend-first.<br>Production-minded.</h2>
       </div>
       <div class="prose reveal">
-        <p>Dedicated Python and Django developer with hands-on backend work, REST API design, and PostgreSQL. I build scalable web applications, write clean code, and work across teams to ship features that actually hold up.</p>
+        <p>Python and Django developer focused on backend systems, REST API design, and PostgreSQL. I write clean Django code and work with frontend teams to ship features that hold up in production.</p>
         <p>Focused on:</p>
         <ul class="about-list">
-          <li>RESTful APIs with Python and Django</li>
+          <li>Django REST Framework and REST APIs</li>
           <li>PostgreSQL schemas and data workflows</li>
           <li>Frontend–backend integration</li>
-          <li>Git, testing basics, and production-minded delivery</li>
+          <li>Git, GitHub, and environment configuration</li>
         </ul>
         <p class="about__now"><span class="dot"></span> Python Developer at AppUnik, Ahmedabad — Jan 2026 to present.</p>
       </div>
@@ -95,10 +95,10 @@
             <p>AppUnik · Ahmedabad</p>
             <p class="edu__meta">Enterprise web solutions</p>
             <ul class="role-list">
-              <li>Built REST APIs with Python and Django for core business workflows</li>
-              <li>Planned PostgreSQL schemas for storage and processing</li>
-              <li>Shipped backend features for user data and API integrations</li>
-              <li>Kept frontend and backend communication smooth and reliable</li>
+              <li>Designed and implemented REST APIs with Python and Django for core business workflows and frontend integrations.</li>
+              <li>Designed PostgreSQL schemas and data relationships for storage, processing, and application workflows.</li>
+              <li>Implemented backend features for user data management and API integrations.</li>
+              <li>Kept frontend–backend communication reliable through structured, documented API contracts.</li>
             </ul>
           </div>
         </li>
@@ -108,10 +108,10 @@
             <h3>Backend Intern</h3>
             <p>AppUnik · Ahmedabad</p>
             <ul class="role-list">
-              <li>PostgreSQL: querying and schema work</li>
-              <li>Git and GitHub: branches, commits, pull requests</li>
-              <li>Main vs development branch workflows</li>
-              <li>Environment config with <code>.env</code> for credentials</li>
+              <li>Wrote PostgreSQL queries and worked on schema changes for application data.</li>
+              <li>Used Git and GitHub for feature branches, commits, and pull requests.</li>
+              <li>Followed main vs development branch workflows on live project code.</li>
+              <li>Configured environments with <code>.env</code> files so credentials stay out of source.</li>
             </ul>
           </div>
         </li>
@@ -122,9 +122,9 @@
             <p>Qspider · Ahmedabad</p>
             <p class="edu__meta">Python, SQL, Django, manual testing</p>
             <ul class="role-list">
-              <li>Python problem-solving and hands-on practice</li>
-              <li>SQL for retrieval and updates on relational data</li>
-              <li>Manual testing: test cases, types, SDLC / STLC</li>
+              <li>Practiced Python problem-solving for backend-oriented tasks.</li>
+              <li>Wrote SQL for retrieval and updates across relational tables.</li>
+              <li>Learned manual testing: test cases, testing types, and SDLC / STLC.</li>
             </ul>
           </div>
         </li>
@@ -136,12 +136,56 @@
     <div class="container">
       <div class="section__intro reveal">
         <p class="eyebrow">03 — projects</p>
-        <h2>Selected case studies</h2>
-        <p class="section__lead">Work from the resume — problem, what I built, stack.</p>
+        <h2>Selected work</h2>
+        <p class="section__lead">Backend case studies from the resume — what it does, what I built, and the stack.</p>
       </div>
 
       <div class="cases">
+        <article class="card card--featured reveal">
+          <figure class="card__media">
+            {# Add a real screenshot later: <img src="{% static 'home/img/projects/flowcreator.webp' %}" alt="Flowcreator interface for AI caption and image generation" width="1200" height="750" loading="lazy" decoding="async"> #}
+          </figure>
+          <header class="card__head">
+            <div>
+              <p class="card__kicker">Featured · AI content SaaS · Nov 2025 – Feb 2026</p>
+              <h3>Flowcreator</h3>
+              <p class="card__tagline">AI-powered social content SaaS</p>
+            </div>
+            <a class="card__link" href="https://flowcreator.dev" target="_blank" rel="noopener noreferrer">Live project ↗</a>
+          </header>
+          <p class="card__one">Built backend systems for an AI-powered social media content platform, including AI generation workflows, scheduling, publishing, role-based access control, and subscription billing.</p>
+          <div class="case-grid">
+            <div>
+              <h4>What it does</h4>
+              <p>One product for captions, images, and posting across social platforms — with roles and subscriptions instead of disconnected tools.</p>
+            </div>
+            <div>
+              <h4>What I built</h4>
+              <p>Generation, scheduling, publishing, access control, and billing on the backend.</p>
+            </div>
+          </div>
+          <h4>Important features</h4>
+          <ul class="built">
+            <li>Caption generation with prompt enhancement and tone selection</li>
+            <li>AI image generation from user inputs</li>
+            <li>Scheduling and publishing workflows for automated posting</li>
+            <li>SaaS architecture with role-based access control and subscription billing</li>
+          </ul>
+          <p class="tags" aria-label="Technologies">
+            <span>Python</span>
+            <span>Django</span>
+            <span>PostgreSQL</span>
+            <span>REST APIs</span>
+            <span>AI integrations</span>
+            <span>Authentication / RBAC</span>
+            <span>Subscription / billing</span>
+          </p>
+        </article>
+
         <article class="card reveal">
+          <figure class="card__media">
+            {# Add a real screenshot later: <img src="{% static 'home/img/projects/meditation-app.webp' %}" alt="Meditation app session tracking interface" width="1200" height="750" loading="lazy" decoding="async"> #}
+          </figure>
           <header class="card__head">
             <div>
               <p class="card__kicker">Meditation app · Mar 2026 · Ahmedabad</p>
@@ -152,74 +196,28 @@
           <p class="card__one">Django REST APIs for user management and meditation session tracking.</p>
           <div class="case-grid">
             <div>
-              <h4>Problem</h4>
-              <p>The product needed a reliable backend for profiles, sessions, and activity — with a clean contract the frontend could depend on.</p>
+              <h4>What it does</h4>
+              <p>A meditation product backend for profiles, sessions, and activity — with a clean API contract the frontend can depend on.</p>
             </div>
             <div>
-              <h4>My role</h4>
-              <p>Backend: REST APIs, PostgreSQL, session completion and user activity.</p>
+              <h4>What I built</h4>
+              <p>Backend: REST APIs, PostgreSQL, session completion, and user activity updates.</p>
             </div>
           </div>
-          <h4>What I built</h4>
+          <h4>Important features</h4>
           <ul class="built">
             <li>REST APIs in Django for users and meditation session tracking</li>
             <li>PostgreSQL for profiles and session records</li>
             <li>Session completion tracking and activity updates</li>
             <li>Documented APIs so frontend–backend stays in sync</li>
           </ul>
-          <p class="tags">
+          <p class="tags" aria-label="Technologies">
             <span>Python</span>
             <span>Django</span>
-            <span>REST</span>
+            <span>Django REST Framework</span>
+            <span>REST APIs</span>
             <span>PostgreSQL</span>
           </p>
-        </article>
-
-        <article class="card reveal">
-          <header class="card__head">
-            <div>
-              <p class="card__kicker">AI content platform · Nov 2025 – Feb 2026 · live</p>
-              <h3>Flowcreator</h3>
-            </div>
-            <a class="card__link" href="https://flowcreator.dev" target="_blank" rel="noopener noreferrer">flowcreator.dev ↗</a>
-          </header>
-          <p class="card__one">AI-powered platform for generating captions and images for social media.</p>
-          <div class="case-grid">
-            <div>
-              <h4>Problem</h4>
-              <p>Teams needed captions, images, and posting in one product — with roles and subscriptions, not a pile of disconnected tools.</p>
-            </div>
-            <div>
-              <h4>My role</h4>
-              <p>Built generation, scheduling, and SaaS pieces: access control and billing.</p>
-            </div>
-          </div>
-          <h4>What I built</h4>
-          <ul class="built">
-            <li>Caption generation with prompt enhancement and tone selection</li>
-            <li>AI image generation from user inputs</li>
-            <li>Scheduling and publishing workflows for automated posting</li>
-            <li>SaaS architecture with role-based access and subscription billing</li>
-          </ul>
-          <p class="tags">
-            <span>Python</span>
-            <span>Django</span>
-            <span>PostgreSQL</span>
-            <span>REST</span>
-            <span>AI</span>
-          </p>
-        </article>
-
-        <!-- TODO: add project -->
-        <article class="card card--placeholder reveal">
-          <p class="placeholder">Next case study</p>
-          <p class="placeholder__hint">Slot reserved — drop a new product here.</p>
-        </article>
-
-        <!-- TODO: add project -->
-        <article class="card card--placeholder reveal">
-          <p class="placeholder">Next case study</p>
-          <p class="placeholder__hint">Slot reserved — drop a new product here.</p>
         </article>
       </div>
     </div>
@@ -229,39 +227,47 @@
     <div class="container">
       <div class="reveal">
         <p class="eyebrow">04 — skills</p>
-        <h2>My skills</h2>
-        <p class="section__lead">How comfortable I am with each — plus groups from the resume.</p>
-      </div>
-      <div class="bars">
-        <div class="bar reveal"><div class="bar__top"><span>Python</span><span>85%</span></div><div class="bar__track"><span class="bar__fill" style="--pct: 85%"></span></div></div>
-        <div class="bar reveal"><div class="bar__top"><span>Django</span><span>82%</span></div><div class="bar__track"><span class="bar__fill" style="--pct: 82%"></span></div></div>
-        <div class="bar reveal"><div class="bar__top"><span>RESTful API</span><span>80%</span></div><div class="bar__track"><span class="bar__fill" style="--pct: 80%"></span></div></div>
-        <div class="bar reveal"><div class="bar__top"><span>PostgreSQL</span><span>78%</span></div><div class="bar__track"><span class="bar__fill" style="--pct: 78%"></span></div></div>
-        <div class="bar reveal"><div class="bar__top"><span>SQL</span><span>80%</span></div><div class="bar__track"><span class="bar__fill" style="--pct: 80%"></span></div></div>
-        <div class="bar reveal"><div class="bar__top"><span>HTML</span><span>85%</span></div><div class="bar__track"><span class="bar__fill" style="--pct: 85%"></span></div></div>
-        <div class="bar reveal"><div class="bar__top"><span>CSS</span><span>80%</span></div><div class="bar__track"><span class="bar__fill" style="--pct: 80%"></span></div></div>
-        <div class="bar reveal"><div class="bar__top"><span>JavaScript</span><span>70%</span></div><div class="bar__track"><span class="bar__fill" style="--pct: 70%"></span></div></div>
-        <div class="bar reveal"><div class="bar__top"><span>React</span><span>65%</span></div><div class="bar__track"><span class="bar__fill" style="--pct: 65%"></span></div></div>
-        <div class="bar reveal"><div class="bar__top"><span>Manual Testing</span><span>80%</span></div><div class="bar__track"><span class="bar__fill" style="--pct: 80%"></span></div></div>
-        <div class="bar reveal"><div class="bar__top"><span>Git / GitHub</span><span>78%</span></div><div class="bar__track"><span class="bar__fill" style="--pct: 78%"></span></div></div>
-        <div class="bar reveal"><div class="bar__top"><span>Flask</span><span>60%</span></div><div class="bar__track"><span class="bar__fill" style="--pct: 60%"></span></div></div>
+        <h2>Skills</h2>
+        <p class="section__lead">Tools I use in backend work, grouped from the resume.</p>
       </div>
       <div class="skills">
         <div class="skill reveal">
-          <h3>Core</h3>
-          <div class="pills"><span>Python</span><span>Django</span><span>RESTful API</span><span>PostgreSQL</span><span>SQL</span><span>RDBMS</span></div>
+          <h3>Backend</h3>
+          <div class="pills">
+            <span>Python</span>
+            <span>Django</span>
+            <span>Django REST Framework</span>
+            <span>REST APIs</span>
+          </div>
+        </div>
+        <div class="skill reveal">
+          <h3>Database</h3>
+          <div class="pills">
+            <span>PostgreSQL</span>
+            <span>SQL</span>
+            <span>Database Design</span>
+            <span>RDBMS</span>
+          </div>
         </div>
         <div class="skill reveal">
           <h3>Frontend</h3>
-          <div class="pills"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span></div>
-        </div>
-        <div class="skill reveal">
-          <h3>Testing</h3>
-          <div class="pills"><span>Manual Testing</span><span>SDLC</span><span>STLC</span></div>
+          <div class="pills">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>React</span>
+          </div>
         </div>
         <div class="skill reveal">
           <h3>Tools</h3>
-          <div class="pills"><span>Git</span><span>GitHub</span><span>Flask</span></div>
+          <div class="pills">
+            <span>Git</span>
+            <span>GitHub</span>
+            <span>Flask</span>
+            <span>Manual Testing</span>
+            <span>SDLC</span>
+            <span>STLC</span>
+          </div>
         </div>
       </div>
     </div>
@@ -296,12 +302,11 @@
     <div class="container">
       <div class="section__intro reveal">
       <p class="eyebrow">06 — resume</p>
-        <h2>CV</h2>
-        <p class="section__lead">View or download the CV. Live portfolio: <a href="https://mohit-portfolio-0vmy.onrender.com/" target="_blank" rel="noopener noreferrer">mohit-portfolio-0vmy.onrender.com</a></p>
+        <h2>Resume</h2>
+        <p class="section__lead">View or download the CV as a PDF.</p>
         <div class="resume-actions">
-          <a class="btn btn--primary" href="{% static 'home/files/Mohit-Kasture-resume.pdf' %}" target="_blank" rel="noopener noreferrer">View CV</a>
+          <a class="btn btn--primary" href="{% static 'home/files/Mohit-Kasture-resume.pdf' %}" target="_blank" rel="noopener noreferrer">View Resume</a>
           <a class="btn btn--ghost" href="{% static 'home/files/Mohit-Kasture-resume.pdf' %}" download="Mohit-Kasture-resume.pdf">Download CV</a>
-          <a class="btn btn--ghost" href="https://mohit-portfolio-0vmy.onrender.com/" target="_blank" rel="noopener noreferrer">Live site</a>
         </div>
       </div>
       <div class="resume-wrap reveal">
@@ -318,57 +323,93 @@
     <div class="container">
       <div class="contact-head reveal">
         <p class="eyebrow">07 — contact</p>
-        <h2>Contact <span class="text-accent">Me</span></h2>
+        <h2>Contact Me</h2>
+        <p class="contact-head__lead">Open to backend work, collaboration, and new opportunities.</p>
       </div>
       <div class="contact-grid">
-        <article class="contact-card reveal">
+        <article class="contact-card contact-card--connect reveal">
           <h3>Let’s Connect</h3>
-          <p class="contact-card__lead">I’m always open to discussing backend work, collaboration, and new opportunities. Feel free to reach out.</p>
+          <p class="contact-card__lead">Reach out by email, phone, or the form — I reply to the address you send.</p>
           <ul class="connect-list">
             <li>
-              <span class="connect-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/></svg>
-              </span>
-              <a href="mailto:mkymohitkumaryadav0@gmail.com">mkymohitkumaryadav0@gmail.com</a>
+              <a class="connect-item" href="mailto:mkymohitkumaryadav0@gmail.com" data-copy="mkymohitkumaryadav0@gmail.com">
+                <span class="connect-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/></svg>
+                </span>
+                <span class="connect-copy">
+                  <span class="connect-value">mkymohitkumaryadav0@gmail.com</span>
+                  <span class="connect-label">Email</span>
+                </span>
+              </a>
             </li>
             <li>
-              <span class="connect-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
-              </span>
-              Ahmedabad, Gujarat
+              <div class="connect-item">
+                <span class="connect-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
+                </span>
+                <span class="connect-copy">
+                  <span class="connect-value">Ahmedabad, Gujarat, India</span>
+                  <span class="connect-label">Location</span>
+                </span>
+              </div>
             </li>
             <li>
-              <span class="connect-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M6.6 10.8v10.2H3.3V10.8h3.3ZM4.95 3C6.1 3 7 3.9 7 5.05S6.1 7.1 4.95 7.1 2.9 6.2 2.9 5.05 3.8 3 4.95 3ZM20.7 21h-3.3v-5.6c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94V21H10.1V10.8h3.17v1.4h.05c.44-.84 1.52-1.73 3.13-1.73 3.35 0 3.97 2.2 3.97 5.07V21Z"/></svg>
-              </span>
-              <a href="https://www.linkedin.com/in/mohit-kasture-812a44261" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+              <a class="connect-item" href="https://www.linkedin.com/in/mohit-kasture-812a44261" target="_blank" rel="noopener noreferrer">
+                <span class="connect-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M6.6 10.8v10.2H3.3V10.8h3.3ZM4.95 3C6.1 3 7 3.9 7 5.05S6.1 7.1 4.95 7.1 2.9 6.2 2.9 5.05 3.8 3 4.95 3ZM20.7 21h-3.3v-5.6c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94V21H10.1V10.8h3.17v1.4h.05c.44-.84 1.52-1.73 3.13-1.73 3.35 0 3.97 2.2 3.97 5.07V21Z"/></svg>
+                </span>
+                <span class="connect-copy">
+                  <span class="connect-value">linkedin.com/in/mohit-kasture-812a44261</span>
+                  <span class="connect-label">LinkedIn Profile</span>
+                </span>
+              </a>
             </li>
             <li>
-              <span class="connect-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm7.9 9h-3.2a15.4 15.4 0 0 0-1.3-5.3A8.03 8.03 0 0 1 19.9 11ZM12 4c.9 0 2.3 1.9 3 7H9c.7-5.1 2.1-7 3-7ZM4.1 13h3.2c.2 1.9.7 3.7 1.3 5.3A8.03 8.03 0 0 1 4.1 13Zm3.2-2H4.1a8.03 8.03 0 0 1 4.5-5.3A15.4 15.4 0 0 0 7.3 11ZM12 20c-.9 0-2.3-1.9-3-7h6c-.7 5.1-2.1 7-3 7Zm3.4-1.7c.6-1.6 1.1-3.4 1.3-5.3h3.2a8.03 8.03 0 0 1-4.5 5.3Z"/></svg>
-              </span>
-              <a href="https://mohit-portfolio-0vmy.onrender.com/" target="_blank" rel="noopener noreferrer">mohit-portfolio-0vmy.onrender.com</a>
+              <a class="connect-item" href="https://mohit-portfolio-0vmy.onrender.com/" target="_blank" rel="noopener noreferrer">
+                <span class="connect-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm7.9 9h-3.2a15.4 15.4 0 0 0-1.3-5.3A8.03 8.03 0 0 1 19.9 11ZM12 4c.9 0 2.3 1.9 3 7H9c.7-5.1 2.1-7 3-7ZM4.1 13h3.2c.2 1.9.7 3.7 1.3 5.3A8.03 8.03 0 0 1 4.1 13Zm3.2-2H4.1a8.03 8.03 0 0 1 4.5-5.3A15.4 15.4 0 0 0 7.3 11ZM12 20c-.9 0-2.3-1.9-3-7h6c-.7 5.1-2.1 7-3 7Zm3.4-1.7c.6-1.6 1.1-3.4 1.3-5.3h3.2a8.03 8.03 0 0 1-4.5 5.3Z"/></svg>
+                </span>
+                <span class="connect-copy">
+                  <span class="connect-value">mohit-portfolio-0vmy.onrender.com</span>
+                  <span class="connect-label">Website</span>
+                </span>
+              </a>
             </li>
             <li>
-              <span class="connect-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.36 1.12 2.94.85.09-.67.35-1.12.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05A9.3 9.3 0 0 1 12 6.84c.85 0 1.71.12 2.51.35 1.9-1.32 2.74-1.05 2.74-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.04 10.04 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg>
-              </span>
-              <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+              <a class="connect-item" href="https://github.com/Mohitkasture" target="_blank" rel="noopener noreferrer">
+                <span class="connect-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.36 1.12 2.94.85.09-.67.35-1.12.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05A9.3 9.3 0 0 1 12 6.84c.85 0 1.71.12 2.51.35 1.9-1.32 2.74-1.05 2.74-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.04 10.04 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg>
+                </span>
+                <span class="connect-copy">
+                  <span class="connect-value">github.com/Mohitkasture</span>
+                  <span class="connect-label">GitHub Profile</span>
+                </span>
+              </a>
             </li>
             <li>
-              <span class="connect-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M6.6 10.8c1.5 3 3.6 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z"/></svg>
-              </span>
-              <a href="tel:+918817284530">+91 88172 84530</a>
+              <a class="connect-item" href="tel:+918817284530" data-copy="+91 88172 84530">
+                <span class="connect-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M6.6 10.8c1.5 3 3.6 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z"/></svg>
+                </span>
+                <span class="connect-copy">
+                  <span class="connect-value">+91 88172 84530</span>
+                  <span class="connect-label">Phone</span>
+                </span>
+              </a>
             </li>
           </ul>
         </article>
-        <article class="contact-card reveal{% if form_success %} is-success{% endif %}" id="contact-panel">
-          <div id="contact-success" class="form-result form-result--ok" role="status" aria-live="polite" {% if not form_success %}hidden{% endif %}>
-            <span class="form-result__icon" aria-hidden="true">✓</span>
-            <h3 id="contact-thanks">{% if thanks_name %}Thanks, {{ thanks_name }}.{% else %}Thanks — I got it.{% endif %}</h3>
+        <article class="contact-card contact-card--panel reveal{% if form_success %} is-success{% endif %}" id="contact-panel">
+          <div id="contact-success" class="form-result form-result--ok" role="status" aria-live="polite" {% if form_success %}aria-hidden="false"{% else %}hidden inert aria-hidden="true"{% endif %}>
+            <span class="form-result__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="32" height="32"><path fill="currentColor" d="M9.2 16.6 4.8 12.2l1.4-1.4 3 3 8.6-8.6 1.4 1.4Z"/></svg>
+            </span>
+            <h3 id="contact-thanks" tabindex="-1">{% if thanks_name %}Thanks, <span class="text-accent">{{ thanks_name }}.</span>{% else %}Thanks — I got it.{% endif %}</h3>
             <p>Your message is in. I’ll reply to your email soon.</p>
-            <button class="btn btn--ghost" type="button" id="send-another">Send another message</button>
+            <button class="btn btn--send-again" type="button" id="send-another">
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M3.4 20.6 21 12 3.4 3.4 3 10.5 15 12 3 13.5Z"/></svg>
+              <span>Send another message</span>
+            </button>
           </div>
           <form
             class="contact-form"
@@ -377,18 +418,21 @@
             action="{% url 'home:index' %}#contact"
             {% if web3forms_access_key %}data-web3forms-key="{{ web3forms_access_key }}"{% endif %}
             data-contact-email="{{ contact_email }}"
-            {% if form_success %}hidden aria-hidden="true"{% endif %}
+            {% if form_success %}hidden aria-hidden="true" inert{% endif %}
           >
             {% csrf_token %}
-            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" class="hp-field">
+            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" class="hp-field" aria-hidden="true">
             <label for="name">Your Name</label>
-            <input id="name" name="name" type="text" placeholder="Enter your name" value="{{ form_name }}" required>
+            <input id="name" name="name" type="text" autocomplete="name" placeholder="Enter your name" value="{{ form_name }}" required>
             <label for="email">Your Email</label>
-            <input id="email" name="email" type="email" placeholder="Enter your email" value="{{ form_email }}" required>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="Enter your email" value="{{ form_email }}" required>
             <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Write your message..." required>{{ form_message }}</textarea>
+            <textarea id="message" name="message" rows="5" autocomplete="off" placeholder="Write your message..." required>{{ form_message }}</textarea>
             <p id="contact-error" class="form-inline-error" role="alert" {% if not form_error %}hidden{% endif %}>{% if form_error %}{{ form_error }}{% endif %}</p>
-            <button class="btn btn--primary btn--block" type="submit" id="contact-submit">Send Message</button>
+            <button class="btn btn--primary btn--block" type="submit" id="contact-submit">
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M3.4 20.6 21 12 3.4 3.4 3 10.5 15 12 3 13.5Z"/></svg>
+              <span class="btn__label">Send Message</span>
+            </button>
           </form>
         </article>
       </div>

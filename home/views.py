@@ -23,6 +23,7 @@ def _contact_page(request, form_error="", form_values=None):
         {
             "contact_name": "Mohit Kasture",
             "contact_email": settings.CONTACT_EMAIL,
+            "site_url": settings.SITE_URL,
             "web3forms_access_key": settings.WEB3FORMS_ACCESS_KEY,
             "form_success": form_success,
             "thanks_name": thanks_name,
