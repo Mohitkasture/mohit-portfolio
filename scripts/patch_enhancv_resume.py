@@ -126,13 +126,18 @@ def put_bullets(
     font: pymupdf.Font,
     items: list[str],
     x: float,
-    y_top: float,
+    slots: list[float],
     width: float,
     fontname: str,
     dot_x: float,
+    max_lines: list[int] | None = None,
 ) -> None:
-    baseline = y_top + 7.99
-    for item in items:
+    for i, item in enumerate(items):
+        y_top = slots[i]
+        baseline = y_top + 7.99
+        lines = wrap(font, item, BODY_SIZE, width)
+        if max_lines is not None:
+            lines = lines[: max_lines[i]]
         page.insert_text(
             (dot_x, baseline),
             "•",
@@ -141,7 +146,7 @@ def put_bullets(
             fontsize=BODY_SIZE,
             color=GRAY,
         )
-        for line in wrap(font, item, BODY_SIZE, width):
+        for line in lines:
             page.insert_text(
                 (x, baseline),
                 line,
@@ -151,7 +156,6 @@ def put_bullets(
                 color=GRAY,
             )
             baseline += LH_BODY
-        baseline += 0.8
 
 
 def skill_row(
@@ -386,31 +390,42 @@ def patch() -> Path:
         page,
         font_r,
         [
-            "Designed and implemented REST APIs with Python and Django for core business workflows and frontend integrations.",
-            "Designed PostgreSQL schemas and data relationships for storage, processing, and application workflows.",
+            "Designed REST APIs with Python and Django for core business workflows and frontend integrations.",
+            "Designed PostgreSQL schemas and data relationships for storage and processing.",
             "Implemented backend features for user data management and API integrations.",
-            "Kept frontend–backend communication reliable through structured, documented API contracts.",
+            "Kept frontend and backend in sync through documented API contracts.",
         ],
         BODY_X,
-        296.5,
+        [296.5, 316.8, 337.1, 357.4],
         BODY_W,
         "inter-r",
         41.2,
+        [2, 2, 2, 1],
     )
+    intern_items = [
+        "Wrote PostgreSQL queries and worked on schema changes for application data.",
+        "Used Git and GitHub for feature branches, commits, and pull requests.",
+        "Followed main vs development branch workflows on live project code.",
+        "Configured environments with .env files so credentials stay out of source.",
+    ]
+    intern_slots = []
+    intern_max = []
+    y = 427.8
+    for item in intern_items:
+        intern_slots.append(y)
+        n = len(wrap(font_r, item, BODY_SIZE, BODY_W))
+        intern_max.append(n)
+        y += n * LH_BODY + 2.0
     put_bullets(
         page,
         font_r,
-        [
-            "Wrote PostgreSQL queries and worked on schema changes for application data.",
-            "Used Git and GitHub for feature branches, commits, and pull requests.",
-            "Followed main vs development branch workflows on live project code.",
-            "Configured environments with .env files so credentials stay out of source.",
-        ],
+        intern_items,
         BODY_X,
-        427.8,
+        intern_slots,
         BODY_W,
         "inter-r",
         41.2,
+        intern_max,
     )
     put_bullets(
         page,
@@ -421,10 +436,11 @@ def patch() -> Path:
             "Learned manual testing: test cases, testing types, and SDLC / STLC.",
         ],
         BODY_X,
-        559.1,
+        [559.1, 579.4, 599.7],
         BODY_W,
         "inter-r",
         41.2,
+        [2, 2, 2],
     )
 
     # Flowcreator description + bullets
@@ -455,10 +471,11 @@ def patch() -> Path:
             "Established role-based access control and subscription billing on a SaaS architecture.",
         ],
         370.0,
-        373.9,
+        [373.9, 404.3, 444.9],
         187.0,
         "inter-r",
         360.9,
+        [3, 3, 2],
     )
     put_bullets(
         page,
@@ -468,10 +485,11 @@ def patch() -> Path:
             "Documented APIs so the frontend can rely on a stable contract.",
         ],
         370.0,
-        542.0,
+        [542.0, 582.5],
         187.0,
         "inter-r",
         360.9,
+        [3, 2],
     )
 
     # Skills: original underline-tag style, grouped with small category labels.
