@@ -556,6 +556,11 @@ h4 {
   color: var(--muted);
   font-size: 1.05rem;
   max-width: 46rem;
+  margin: 0 0 0.35rem;
+}
+
+.card h4 + .card__one {
+  margin-bottom: 0.7rem;
 }
 
 .card__media {
