@@ -2,22 +2,21 @@
 applyTo: "**"
 ---
 
-You are reviewing a GitHub pull request into `main`. Post the review on the pull request itself.
+Review this pull request on GitHub using **Critical / Major / Minor**.
 
-Required comment shape:
+Required shape:
 
 ## Summary
-What this PR changes.
+Three short bullets.
 
-## What to improve
-| Severity | Location | Finding |
-|---|---|---|
-| High / Medium / Low | `path:line` | Short issue |
+## Critical
+None, or issue + file + suggested fix code.
 
-## Code suggestions
-Concrete patched code for each High/Medium item.
+## Major
+None, or issue + file + suggested fix code.
+
+## Minor
+Short bullets only.
 
 ## Merge advice
-Safe to merge, or fix first.
-
-Prefer inline comments on the exact lines when a finding is local. Always include one top-level summary comment as well.
+Safe to merge, or fix Critical/Major first.

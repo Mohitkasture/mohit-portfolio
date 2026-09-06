@@ -33,7 +33,7 @@
       <div class="hero__copy">
         <p class="eyebrow reveal">Python &amp; Django Developer · Ahmedabad</p>
         <h1 class="hero__title reveal">Python &amp; Django Developer building production-ready APIs and backend systems</h1>
-        <p class="hero__sub reveal">Python, Django, REST APIs, and PostgreSQL — backend systems that frontend and third-party clients can rely on.</p>
+        <p class="hero__sub reveal">I build REST APIs, database-backed applications, and backend features that connect reliably with frontend and third-party services.</p>
         <div class="hero__cta reveal">
           <a class="btn btn--primary" href="#projects">View Projects</a>
           <a class="btn btn--ghost" href="{% static 'home/files/Mohit-Kasture-resume.pdf' %}" target="_blank" rel="noopener noreferrer">View Resume</a>
@@ -137,13 +137,13 @@
       <div class="section__intro reveal">
         <p class="eyebrow">03 — projects</p>
         <h2>Selected work</h2>
-        <p class="section__lead">Backend case studies from the resume — what it does, what I built, and the stack.</p>
+        <p class="section__lead">Backend case studies from the resume — what the product is, what I built, and the stack.</p>
       </div>
 
       <div class="cases">
         <article class="card card--featured reveal">
           <figure class="card__media">
-            {# Add a real screenshot later: <img src="{% static 'home/img/projects/flowcreator.webp' %}" alt="Flowcreator interface for AI caption and image generation" width="1200" height="750" loading="lazy" decoding="async"> #}
+            {# Real Flowcreator screenshots only — add later from the live app, do not generate fakes. #}
           </figure>
           <header class="card__head">
             <div>
@@ -151,25 +151,18 @@
               <h3>Flowcreator</h3>
               <p class="card__tagline">AI-powered social content SaaS</p>
             </div>
-            <a class="card__link" href="https://flowcreator.dev" target="_blank" rel="noopener noreferrer">Live project ↗</a>
+            <a class="card__link" href="https://flowcreator.dev" target="_blank" rel="noopener noreferrer" aria-label="Open Flowcreator live site">Live project ↗</a>
           </header>
-          <p class="card__one">Built backend systems for an AI-powered social media content platform, including AI generation workflows, scheduling, publishing, role-based access control, and subscription billing.</p>
-          <div class="case-grid">
-            <div>
-              <h4>What it does</h4>
-              <p>One product for captions, images, and posting across social platforms — with roles and subscriptions instead of disconnected tools.</p>
-            </div>
-            <div>
-              <h4>What I built</h4>
-              <p>Generation, scheduling, publishing, access control, and billing on the backend.</p>
-            </div>
-          </div>
-          <h4>Important features</h4>
+          <h4>Overview</h4>
+          <p class="card__one">An AI-powered platform for generating captions and images for social media, with scheduling, publishing, role-based access, and subscription billing in one product.</p>
+          <h4>My contribution</h4>
+          <p class="card__one">Built Django backend APIs and workflows for content generation, scheduling, publishing, role-based access control, and billing.</p>
           <ul class="built">
-            <li>Caption generation with prompt enhancement and tone selection</li>
-            <li>AI image generation from user inputs</li>
+            <li>Django backend and REST API development for the product’s core workflows</li>
+            <li>AI content generation workflows: caption generation with prompt enhancement and tone selection, and image generation from user inputs</li>
             <li>Scheduling and publishing workflows for automated posting</li>
-            <li>SaaS architecture with role-based access control and subscription billing</li>
+            <li>Role-based access control</li>
+            <li>Subscription billing</li>
           </ul>
           <p class="tags" aria-label="Technologies">
             <span>Python</span>
@@ -184,7 +177,7 @@
 
         <article class="card reveal">
           <figure class="card__media">
-            {# Add a real screenshot later: <img src="{% static 'home/img/projects/meditation-app.webp' %}" alt="Meditation app session tracking interface" width="1200" height="750" loading="lazy" decoding="async"> #}
+            {# Real Meditation App screenshots only — add later if they exist, do not generate fakes. #}
           </figure>
           <header class="card__head">
             <div>
@@ -193,24 +186,18 @@
             </div>
             <span class="badge">Private · case study</span>
           </header>
-          <p class="card__one">Django REST APIs for user management and meditation session tracking.</p>
-          <div class="case-grid">
-            <div>
-              <h4>What it does</h4>
-              <p>A meditation product backend for profiles, sessions, and activity — with a clean API contract the frontend can depend on.</p>
-            </div>
-            <div>
-              <h4>What I built</h4>
-              <p>Backend: REST APIs, PostgreSQL, session completion, and user activity updates.</p>
-            </div>
-          </div>
-          <h4>Important features</h4>
+          <h4>Overview</h4>
+          <p class="card__one">A meditation app backend for user management and session tracking, with a documented API contract the frontend can depend on.</p>
+          <h4>My contribution</h4>
+          <p class="card__one">Built Django REST APIs and PostgreSQL-backed storage for users, sessions, completion tracking, and activity updates.</p>
           <ul class="built">
-            <li>REST APIs in Django for users and meditation session tracking</li>
-            <li>PostgreSQL for profiles and session records</li>
-            <li>Session completion tracking and activity updates</li>
-            <li>Documented APIs so frontend–backend stays in sync</li>
+            <li>REST APIs in Django for user management and meditation session tracking</li>
+            <li>PostgreSQL for user profiles and session records</li>
+            <li>Session completion tracking and user activity updates</li>
+            <li>Documented APIs so frontend and backend stay in sync</li>
           </ul>
+          <h4>Technical implementation</h4>
+          <p class="card__one">Django REST APIs over PostgreSQL for profiles, session records, and user-related writes — structured so the frontend can rely on a stable contract.</p>
           <p class="tags" aria-label="Technologies">
             <span>Python</span>
             <span>Django</span>
