@@ -436,7 +436,7 @@ h4 {
 }
 
 .section--alt {
-  background: var(--bg-alt);
+  background: color-mix(in srgb, var(--bg-alt) 42%, transparent);
   border-block: 1px solid var(--border);
 }
 
