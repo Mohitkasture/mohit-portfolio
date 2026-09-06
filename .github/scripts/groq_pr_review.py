@@ -21,6 +21,7 @@ UNAVAILABLE_MODELS = {
     "mixtral-8x7b-32768",
     "llama-2-70b-chat",
 }
+# Keep well under the 8000 TPM free-tier cap (~4 chars/token).
 MAX_DIFF_CHARS = 8000
 GITHUB_API = "https://api.github.com"
 SHORT_PROMPT = """
@@ -125,7 +126,7 @@ def fetch_pr_diff(repo: str, pr_number: str, token: str) -> str:
 
 def wrap_review(raw: str, model: str) -> str:
     body = raw.strip()
-    if "## Summary" not in body:
+    if not body.lower().startswith("## summary"):
         body = "## Summary\n\n" + body
     return (
         "## AI review (Groq)\n\n"
@@ -154,10 +155,13 @@ def post_via_gh(pr_number: str, body_path: str) -> None:
     env = os.environ.copy()
     if not env.get("GH_TOKEN") and env.get("GITHUB_TOKEN"):
         env["GH_TOKEN"] = env["GITHUB_TOKEN"]
-    subprocess.check_call(
-        ["gh", "pr", "comment", pr_number, "--body-file", body_path],
-        env=env,
-    )
+    try:
+        subprocess.check_call(
+            ["gh", "pr", "comment", pr_number, "--body-file", body_path],
+            env=env,
+        )
+    except FileNotFoundError as e:
+        raise RuntimeError("GitHub CLI 'gh' not found. Install it or use the API method.") from e
 
 
 def post_issue_comment(repo: str, pr_number: str, token: str, body: str) -> None:
