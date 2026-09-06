@@ -36,7 +36,7 @@
         <p class="hero__sub reveal">I build REST APIs, database-backed applications, and backend features that connect reliably with frontend and third-party services.</p>
         <div class="hero__cta reveal">
           <a class="btn btn--primary" href="#projects">View Projects</a>
-          <a class="btn btn--ghost" href="{% static 'home/files/Mohit-Kasture-resume.pdf' %}" target="_blank" rel="noopener noreferrer">View Resume</a>
+          <a class="btn btn--ghost" href="{% static 'home/files/Mohit-Kasture-resume.pdf' %}?v=skills2" target="_blank" rel="noopener noreferrer">View Resume</a>
           <a class="btn btn--ghost" href="https://github.com/Mohitkasture" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a class="btn btn--ghost" href="#contact">Get in Touch</a>
         </div>
@@ -232,7 +232,6 @@
           <div class="pills">
             <span>PostgreSQL</span>
             <span>SQL</span>
-            <span>Database Design</span>
             <span>RDBMS</span>
           </div>
         </div>
@@ -250,7 +249,11 @@
           <div class="pills">
             <span>Git</span>
             <span>GitHub</span>
-            <span>Flask</span>
+          </div>
+        </div>
+        <div class="skill reveal">
+          <h3>Testing</h3>
+          <div class="pills">
             <span>Manual Testing</span>
             <span>SDLC</span>
             <span>STLC</span>
@@ -292,15 +295,15 @@
         <h2>Resume</h2>
         <p class="section__lead">View or download the CV as a PDF.</p>
         <div class="resume-actions">
-          <a class="btn btn--primary" href="{% static 'home/files/Mohit-Kasture-resume.pdf' %}" target="_blank" rel="noopener noreferrer">View Resume</a>
-          <a class="btn btn--ghost" href="{% static 'home/files/Mohit-Kasture-resume.pdf' %}" download="Mohit-Kasture-resume.pdf">Download CV</a>
+          <a class="btn btn--primary" href="{% static 'home/files/Mohit-Kasture-resume.pdf' %}?v=skills2" target="_blank" rel="noopener noreferrer">View Resume</a>
+          <a class="btn btn--ghost" href="{% static 'home/files/Mohit-Kasture-resume.pdf' %}?v=skills2" download="Mohit-Kasture-resume.pdf">Download CV</a>
         </div>
       </div>
       <div class="resume-wrap reveal">
         <iframe
           class="resume-frame"
           title="Mohit Kasture resume"
-          src="{% static 'home/files/Mohit-Kasture-resume.pdf' %}#view=FitH"
+          src="{% static 'home/files/Mohit-Kasture-resume.pdf' %}?v=skills2#view=FitH"
         ></iframe>
       </div>
     </div>

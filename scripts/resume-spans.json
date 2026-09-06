@@ -1,0 +1,2862 @@
+[
+  {
+    "bi": 0,
+    "li": 0,
+    "si": 0,
+    "text": "MK",
+    "font": "Inter-Medium",
+    "size": 21.57,
+    "color": 0,
+    "bbox": [
+      497.89,
+      64.74,
+      531.57,
+      90.84
+    ],
+    "origin": [
+      497.89,
+      85.63
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 0,
+    "li": 1,
+    "si": 0,
+    "text": "MOHIT KASTURE",
+    "font": "Rubik-Medium",
+    "size": 24.1,
+    "color": 0,
+    "bbox": [
+      38.69,
+      32.65,
+      229.5,
+      61.21
+    ],
+    "origin": [
+      38.69,
+      55.18
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 0,
+    "li": 2,
+    "si": 0,
+    "text": "Python & Django Developer",
+    "font": "Rubik-Medium",
+    "size": 12.05,
+    "color": 36095,
+    "bbox": [
+      38.69,
+      60.41,
+      197.44,
+      74.69
+    ],
+    "origin": [
+      38.69,
+      71.68
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 1,
+    "li": 0,
+    "si": 0,
+    "text": "918817284530",
+    "font": "Inter-Bold",
+    "size": 7.61,
+    "color": 4079166,
+    "bbox": [
+      48.84,
+      81.43,
+      106.05,
+      90.64
+    ],
+    "origin": [
+      48.84,
+      88.8
+    ],
+    "flags": 20
+  },
+  {
+    "bi": 1,
+    "li": 1,
+    "si": 0,
+    "text": "mkymohitkumaryadav0@gmail.com",
+    "font": "Inter-Bold",
+    "size": 7.61,
+    "color": 4079166,
+    "bbox": [
+      123.82,
+      81.43,
+      259.02,
+      90.64
+    ],
+    "origin": [
+      123.82,
+      88.8
+    ],
+    "flags": 20
+  },
+  {
+    "bi": 1,
+    "li": 2,
+    "si": 0,
+    "text": "linkedin.com/in/mohit-kasture-812a44261",
+    "font": "Inter-Bold",
+    "size": 7.61,
+    "color": 4079166,
+    "bbox": [
+      276.79,
+      81.43,
+      435.7,
+      90.64
+    ],
+    "origin": [
+      276.79,
+      88.8
+    ],
+    "flags": 20
+  },
+  {
+    "bi": 1,
+    "li": 3,
+    "si": 0,
+    "text": "Ahmedabad",
+    "font": "Inter-Bold",
+    "size": 7.61,
+    "color": 4079166,
+    "bbox": [
+      48.84,
+      92.21,
+      94.11,
+      101.42
+    ],
+    "origin": [
+      48.84,
+      99.59
+    ],
+    "flags": 20
+  },
+  {
+    "bi": 2,
+    "li": 0,
+    "si": 0,
+    "text": "SUMMARY",
+    "font": "Rubik-Medium",
+    "size": 12.69,
+    "color": 0,
+    "bbox": [
+      38.69,
+      129.59,
+      101.97,
+      144.62
+    ],
+    "origin": [
+      38.69,
+      141.45
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 3,
+    "li": 0,
+    "si": 0,
+    "text": "I am a dedicated Python and Django Developer with hands-on experience in ",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      38.69,
+      149.95,
+      337.06,
+      159.93
+    ],
+    "origin": [
+      38.69,
+      157.94
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 3,
+    "li": 1,
+    "si": 0,
+    "text": "backend development, RESTful API design, and PostgreSQL database ",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      38.69,
+      160.1,
+      312.69,
+      170.08
+    ],
+    "origin": [
+      38.69,
+      168.09
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 3,
+    "li": 2,
+    "si": 0,
+    "text": "management. I am skilled at building scalable web applications, ",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      38.69,
+      170.25,
+      287.44,
+      180.23
+    ],
+    "origin": [
+      38.69,
+      178.24
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 3,
+    "li": 3,
+    "si": 0,
+    "text": "collaborating across teams, and creating clean, efficient code. I am eager to ",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      38.69,
+      180.4,
+      336.44,
+      190.38
+    ],
+    "origin": [
+      38.69,
+      188.39
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 3,
+    "li": 4,
+    "si": 0,
+    "text": "contribute to innovative software projects and continuously enhance my ",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      38.69,
+      190.55,
+      321.93,
+      200.53
+    ],
+    "origin": [
+      38.69,
+      198.54
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 3,
+    "li": 5,
+    "si": 0,
+    "text": "skillset",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      38.69,
+      200.7,
+      65.47,
+      210.68
+    ],
+    "origin": [
+      38.69,
+      208.69
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 4,
+    "li": 0,
+    "si": 0,
+    "text": "EXPERIENCE",
+    "font": "Rubik-Medium",
+    "size": 12.69,
+    "color": 0,
+    "bbox": [
+      38.69,
+      222.83,
+      117.11,
+      237.87
+    ],
+    "origin": [
+      38.69,
+      234.69
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 5,
+    "li": 0,
+    "si": 0,
+    "text": "Python Developer",
+    "font": "Rubik-Medium",
+    "size": 10.78,
+    "color": 0,
+    "bbox": [
+      38.69,
+      243.01,
+      131.51,
+      255.78
+    ],
+    "origin": [
+      38.69,
+      253.09
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 5,
+    "li": 1,
+    "si": 0,
+    "text": "AppUnik",
+    "font": "Inter-Bold",
+    "size": 9.51,
+    "color": 36095,
+    "bbox": [
+      38.69,
+      257.83,
+      78.83,
+      269.34
+    ],
+    "origin": [
+      38.69,
+      267.04
+    ],
+    "flags": 20
+  },
+  {
+    "bi": 6,
+    "li": 0,
+    "si": 0,
+    "text": "01/2026\u00a0",
+    "font": "Inter-Regular",
+    "size": 7.61,
+    "color": 4079166,
+    "bbox": [
+      50.11,
+      272.36,
+      81.97,
+      281.57
+    ],
+    "origin": [
+      50.11,
+      279.73
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 6,
+    "li": 1,
+    "si": 0,
+    "text": "Ahmedabad, India",
+    "font": "Inter-Regular",
+    "size": 7.61,
+    "color": 4079166,
+    "bbox": [
+      101.4,
+      272.36,
+      166.41,
+      281.57
+    ],
+    "origin": [
+      101.4,
+      279.73
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 7,
+    "li": 0,
+    "si": 0,
+    "text": "A tech firm delivering enterprise web solutions",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      38.69,
+      284.43,
+      219.59,
+      294.41
+    ],
+    "origin": [
+      38.69,
+      292.42
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 8,
+    "li": 0,
+    "si": 0,
+    "text": "Built RESTful APIs using Python and Django to support core business ",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      50.32,
+      296.48,
+      320.99,
+      306.46
+    ],
+    "origin": [
+      50.32,
+      304.47
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 8,
+    "li": 1,
+    "si": 0,
+    "text": "workflows",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      50.32,
+      306.63,
+      90.05,
+      316.61
+    ],
+    "origin": [
+      50.32,
+      314.62
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 8,
+    "li": 2,
+    "si": 0,
+    "text": "Planned and managed PostgreSQL database schemas for efficient data ",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      50.32,
+      316.78,
+      330.85,
+      326.76
+    ],
+    "origin": [
+      50.32,
+      324.77
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 8,
+    "li": 3,
+    "si": 0,
+    "text": "storage and processing",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      50.32,
+      326.93,
+      141.98,
+      336.91
+    ],
+    "origin": [
+      50.32,
+      334.91
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 8,
+    "li": 4,
+    "si": 0,
+    "text": "Executed core backend functionalities including user data management ",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      50.32,
+      337.08,
+      330.7,
+      347.06
+    ],
+    "origin": [
+      50.32,
+      345.06
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 8,
+    "li": 5,
+    "si": 0,
+    "text": "and API integration",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      50.32,
+      347.22,
+      124.52,
+      357.2
+    ],
+    "origin": [
+      50.32,
+      355.21
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 8,
+    "li": 6,
+    "si": 0,
+    "text": "Ensured smooth communication between frontend and backend systems",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      50.32,
+      357.37,
+      334.63,
+      367.35
+    ],
+    "origin": [
+      50.32,
+      365.36
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 9,
+    "li": 0,
+    "si": 0,
+    "text": "Backend Intern",
+    "font": "Rubik-Medium",
+    "size": 10.78,
+    "color": 0,
+    "bbox": [
+      38.69,
+      374.31,
+      118.23,
+      387.09
+    ],
+    "origin": [
+      38.69,
+      384.39
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 9,
+    "li": 1,
+    "si": 0,
+    "text": "AppUnik",
+    "font": "Inter-Bold",
+    "size": 9.51,
+    "color": 36095,
+    "bbox": [
+      38.69,
+      389.13,
+      78.83,
+      400.64
+    ],
+    "origin": [
+      38.69,
+      398.35
+    ],
+    "flags": 20
+  },
+  {
+    "bi": 10,
+    "li": 0,
+    "si": 0,
+    "text": "09/2025 - 12/2025\u00a0",
+    "font": "Inter-Regular",
+    "size": 7.61,
+    "color": 4079166,
+    "bbox": [
+      50.11,
+      403.66,
+      120.31,
+      412.87
+    ],
+    "origin": [
+      50.11,
+      411.03
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 10,
+    "li": 1,
+    "si": 0,
+    "text": "Ahmedabad, India",
+    "font": "Inter-Regular",
+    "size": 7.61,
+    "color": 4079166,
+    "bbox": [
+      139.74,
+      403.66,
+      204.75,
+      412.87
+    ],
+    "origin": [
+      139.74,
+      411.03
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 11,
+    "li": 0,
+    "si": 0,
+    "text": "A tech firm delivering enterprise web solutions",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      38.69,
+      415.73,
+      219.59,
+      425.71
+    ],
+    "origin": [
+      38.69,
+      423.72
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 12,
+    "li": 0,
+    "si": 0,
+    "text": "Applied PostgreSQL for database operations including querying and ",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      50.32,
+      427.78,
+      317.06,
+      437.76
+    ],
+    "origin": [
+      50.32,
+      435.77
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 12,
+    "li": 1,
+    "si": 0,
+    "text": "schema management",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      50.32,
+      437.93,
+      133.96,
+      447.91
+    ],
+    "origin": [
+      50.32,
+      445.92
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 12,
+    "li": 2,
+    "si": 0,
+    "text": "Adopted Git and GitHub for version control - branching, commits, and ",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      50.32,
+      448.08,
+      324.0,
+      458.06
+    ],
+    "origin": [
+      50.32,
+      456.07
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 12,
+    "li": 3,
+    "si": 0,
+    "text": "pull requests",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      50.32,
+      458.23,
+      100.25,
+      468.21
+    ],
+    "origin": [
+      50.32,
+      466.22
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 12,
+    "li": 4,
+    "si": 0,
+    "text": "Understood project workflows involving main and development branches",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      50.32,
+      468.38,
+      334.14,
+      478.36
+    ],
+    "origin": [
+      50.32,
+      476.37
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 12,
+    "li": 5,
+    "si": 0,
+    "text": "Configured application environments using .env files for secure credential ",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      50.32,
+      478.53,
+      338.7,
+      488.51
+    ],
+    "origin": [
+      50.32,
+      486.51
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 12,
+    "li": 6,
+    "si": 0,
+    "text": "management",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      50.32,
+      488.68,
+      101.24,
+      498.65
+    ],
+    "origin": [
+      50.32,
+      496.66
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 13,
+    "li": 0,
+    "si": 0,
+    "text": "Software Intern",
+    "font": "Rubik-Medium",
+    "size": 10.78,
+    "color": 0,
+    "bbox": [
+      38.69,
+      505.61,
+      121.1,
+      518.39
+    ],
+    "origin": [
+      38.69,
+      515.69
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 13,
+    "li": 1,
+    "si": 0,
+    "text": "Qspider",
+    "font": "Inter-Bold",
+    "size": 9.51,
+    "color": 36095,
+    "bbox": [
+      38.69,
+      520.43,
+      75.71,
+      531.95
+    ],
+    "origin": [
+      38.69,
+      529.65
+    ],
+    "flags": 20
+  },
+  {
+    "bi": 14,
+    "li": 0,
+    "si": 0,
+    "text": "03/2025 - 09/2025\u00a0",
+    "font": "Inter-Regular",
+    "size": 7.61,
+    "color": 4079166,
+    "bbox": [
+      50.11,
+      534.96,
+      121.77,
+      544.17
+    ],
+    "origin": [
+      50.11,
+      542.33
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 14,
+    "li": 1,
+    "si": 0,
+    "text": "Ahmedabad, India",
+    "font": "Inter-Regular",
+    "size": 7.61,
+    "color": 4079166,
+    "bbox": [
+      141.19,
+      534.96,
+      206.21,
+      544.17
+    ],
+    "origin": [
+      141.19,
+      542.33
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 15,
+    "li": 0,
+    "si": 0,
+    "text": "Internship focused on Python, SQL, Django, Manual Testing",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      38.69,
+      547.03,
+      269.52,
+      557.01
+    ],
+    "origin": [
+      38.69,
+      555.02
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 16,
+    "li": 0,
+    "si": 0,
+    "text": "Strengthened Python programming skills through hands-on problem-",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      50.32,
+      559.08,
+      319.39,
+      569.06
+    ],
+    "origin": [
+      50.32,
+      567.07
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 16,
+    "li": 1,
+    "si": 0,
+    "text": "solving exercises",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      50.32,
+      569.23,
+      116.89,
+      579.21
+    ],
+    "origin": [
+      50.32,
+      577.22
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 16,
+    "li": 2,
+    "si": 0,
+    "text": "Authored multiple SQL queries for data retrieval and manipulation across ",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      50.32,
+      579.38,
+      334.9,
+      589.36
+    ],
+    "origin": [
+      50.32,
+      587.37
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 16,
+    "li": 3,
+    "si": 0,
+    "text": "relational databases",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      50.32,
+      589.53,
+      128.89,
+      599.51
+    ],
+    "origin": [
+      50.32,
+      597.52
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 16,
+    "li": 4,
+    "si": 0,
+    "text": "Learned manual testing concepts including test case writing, testing ",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      50.32,
+      599.68,
+      318.21,
+      609.66
+    ],
+    "origin": [
+      50.32,
+      607.67
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 16,
+    "li": 5,
+    "si": 0,
+    "text": "types, and SDLC/STLC models",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      50.32,
+      609.83,
+      169.67,
+      619.81
+    ],
+    "origin": [
+      50.32,
+      617.82
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 16,
+    "li": 6,
+    "si": 0,
+    "text": "Enhanced communication and interpersonal skills through structured ",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      50.32,
+      619.98,
+      320.21,
+      629.96
+    ],
+    "origin": [
+      50.32,
+      627.97
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 16,
+    "li": 7,
+    "si": 0,
+    "text": "internship activities",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      50.32,
+      630.13,
+      126.06,
+      640.11
+    ],
+    "origin": [
+      50.32,
+      638.11
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 17,
+    "li": 0,
+    "si": 0,
+    "text": "EDUCATION",
+    "font": "Rubik-Medium",
+    "size": 12.69,
+    "color": 0,
+    "bbox": [
+      38.69,
+      652.26,
+      110.32,
+      667.29
+    ],
+    "origin": [
+      38.69,
+      664.12
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 18,
+    "li": 0,
+    "si": 0,
+    "text": "Master of Computer Applications (MCA)",
+    "font": "Rubik-Medium",
+    "size": 10.78,
+    "color": 0,
+    "bbox": [
+      38.69,
+      672.43,
+      242.86,
+      685.21
+    ],
+    "origin": [
+      38.69,
+      682.52
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 18,
+    "li": 1,
+    "si": 0,
+    "text": "Rajiv Gandhi Proudyogiki Vishwavidyalaya",
+    "font": "Inter-Bold",
+    "size": 9.51,
+    "color": 36095,
+    "bbox": [
+      38.69,
+      687.25,
+      235.1,
+      698.77
+    ],
+    "origin": [
+      38.69,
+      696.47
+    ],
+    "flags": 20
+  },
+  {
+    "bi": 19,
+    "li": 0,
+    "si": 0,
+    "text": "07/2023 - 05/2025\u00a0",
+    "font": "Inter-Regular",
+    "size": 7.61,
+    "color": 4079166,
+    "bbox": [
+      50.11,
+      701.78,
+      121.21,
+      710.99
+    ],
+    "origin": [
+      50.11,
+      709.16
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 19,
+    "li": 1,
+    "si": 0,
+    "text": "Bhopal",
+    "font": "Inter-Regular",
+    "size": 7.61,
+    "color": 4079166,
+    "bbox": [
+      140.64,
+      701.78,
+      165.36,
+      710.99
+    ],
+    "origin": [
+      140.64,
+      709.16
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 20,
+    "li": 0,
+    "si": 0,
+    "text": "Bachelor of Science (BSc)",
+    "font": "Rubik-Medium",
+    "size": 10.78,
+    "color": 0,
+    "bbox": [
+      38.69,
+      718.1,
+      172.1,
+      730.88
+    ],
+    "origin": [
+      38.69,
+      728.19
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 20,
+    "li": 1,
+    "si": 0,
+    "text": "Barkatullah University",
+    "font": "Inter-Bold",
+    "size": 9.51,
+    "color": 36095,
+    "bbox": [
+      38.69,
+      732.92,
+      141.53,
+      744.44
+    ],
+    "origin": [
+      38.69,
+      742.14
+    ],
+    "flags": 20
+  },
+  {
+    "bi": 21,
+    "li": 0,
+    "si": 0,
+    "text": "07/2020 - 05/2023\u00a0",
+    "font": "Inter-Regular",
+    "size": 7.61,
+    "color": 4079166,
+    "bbox": [
+      50.11,
+      747.45,
+      121.34,
+      756.67
+    ],
+    "origin": [
+      50.11,
+      754.83
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 21,
+    "li": 1,
+    "si": 0,
+    "text": "Bhopal",
+    "font": "Inter-Regular",
+    "size": 7.61,
+    "color": 4079166,
+    "bbox": [
+      140.77,
+      747.45,
+      165.49,
+      756.67
+    ],
+    "origin": [
+      140.77,
+      754.83
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 22,
+    "li": 0,
+    "si": 0,
+    "text": "SKILLS",
+    "font": "Rubik-Medium",
+    "size": 12.69,
+    "color": 0,
+    "bbox": [
+      358.38,
+      129.59,
+      401.28,
+      144.62
+    ],
+    "origin": [
+      358.38,
+      141.45
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 23,
+    "li": 0,
+    "si": 0,
+    "text": "Python",
+    "font": "Inter-Bold",
+    "size": 8.88,
+    "color": 4079166,
+    "bbox": [
+      364.09,
+      153.78,
+      395.12,
+      164.53
+    ],
+    "origin": [
+      364.09,
+      162.38
+    ],
+    "flags": 20
+  },
+  {
+    "bi": 23,
+    "li": 1,
+    "si": 0,
+    "text": "Django",
+    "font": "Inter-Bold",
+    "size": 8.88,
+    "color": 4079166,
+    "bbox": [
+      412.88,
+      153.78,
+      443.5,
+      164.53
+    ],
+    "origin": [
+      412.88,
+      162.38
+    ],
+    "flags": 20
+  },
+  {
+    "bi": 23,
+    "li": 2,
+    "si": 0,
+    "text": "Gmail",
+    "font": "Inter-Bold",
+    "size": 8.88,
+    "color": 4079166,
+    "bbox": [
+      461.26,
+      153.78,
+      486.1,
+      164.53
+    ],
+    "origin": [
+      461.26,
+      162.38
+    ],
+    "flags": 20
+  },
+  {
+    "bi": 24,
+    "li": 0,
+    "si": 0,
+    "text": "RESTful API",
+    "font": "Inter-Bold",
+    "size": 8.88,
+    "color": 4079166,
+    "bbox": [
+      364.09,
+      178.52,
+      415.42,
+      189.27
+    ],
+    "origin": [
+      364.09,
+      187.12
+    ],
+    "flags": 20
+  },
+  {
+    "bi": 24,
+    "li": 1,
+    "si": 0,
+    "text": "PostgreSQL",
+    "font": "Inter-Bold",
+    "size": 8.88,
+    "color": 4079166,
+    "bbox": [
+      433.18,
+      178.52,
+      484.82,
+      189.27
+    ],
+    "origin": [
+      433.18,
+      187.12
+    ],
+    "flags": 20
+  },
+  {
+    "bi": 24,
+    "li": 2,
+    "si": 0,
+    "text": "REST",
+    "font": "Inter-Bold",
+    "size": 8.88,
+    "color": 4079166,
+    "bbox": [
+      502.59,
+      178.52,
+      525.6,
+      189.27
+    ],
+    "origin": [
+      502.59,
+      187.12
+    ],
+    "flags": 20
+  },
+  {
+    "bi": 25,
+    "li": 0,
+    "si": 0,
+    "text": "GitHub",
+    "font": "Inter-Bold",
+    "size": 8.88,
+    "color": 4079166,
+    "bbox": [
+      364.09,
+      203.26,
+      394.9,
+      214.0
+    ],
+    "origin": [
+      364.09,
+      211.86
+    ],
+    "flags": 20
+  },
+  {
+    "bi": 25,
+    "li": 1,
+    "si": 0,
+    "text": "SQL",
+    "font": "Inter-Bold",
+    "size": 8.88,
+    "color": 4079166,
+    "bbox": [
+      412.67,
+      203.26,
+      430.47,
+      214.0
+    ],
+    "origin": [
+      412.67,
+      211.86
+    ],
+    "flags": 20
+  },
+  {
+    "bi": 25,
+    "li": 2,
+    "si": 0,
+    "text": "Manual Testing",
+    "font": "Inter-Bold",
+    "size": 8.88,
+    "color": 4079166,
+    "bbox": [
+      448.24,
+      203.26,
+      514.72,
+      214.0
+    ],
+    "origin": [
+      448.24,
+      211.86
+    ],
+    "flags": 20
+  },
+  {
+    "bi": 26,
+    "li": 0,
+    "si": 0,
+    "text": "RDBMS",
+    "font": "Inter-Bold",
+    "size": 8.88,
+    "color": 4079166,
+    "bbox": [
+      364.09,
+      227.99,
+      396.19,
+      238.74
+    ],
+    "origin": [
+      364.09,
+      236.6
+    ],
+    "flags": 20
+  },
+  {
+    "bi": 26,
+    "li": 1,
+    "si": 0,
+    "text": "SDLC",
+    "font": "Inter-Bold",
+    "size": 8.88,
+    "color": 4079166,
+    "bbox": [
+      413.96,
+      227.99,
+      437.69,
+      238.74
+    ],
+    "origin": [
+      413.96,
+      236.6
+    ],
+    "flags": 20
+  },
+  {
+    "bi": 26,
+    "li": 2,
+    "si": 0,
+    "text": "STLC",
+    "font": "Inter-Bold",
+    "size": 8.88,
+    "color": 4079166,
+    "bbox": [
+      455.46,
+      227.99,
+      478.68,
+      238.74
+    ],
+    "origin": [
+      455.46,
+      236.6
+    ],
+    "flags": 20
+  },
+  {
+    "bi": 26,
+    "li": 3,
+    "si": 0,
+    "text": "Flask",
+    "font": "Inter-Bold",
+    "size": 8.88,
+    "color": 4079166,
+    "bbox": [
+      496.45,
+      227.99,
+      519.36,
+      238.74
+    ],
+    "origin": [
+      496.45,
+      236.6
+    ],
+    "flags": 20
+  },
+  {
+    "bi": 27,
+    "li": 0,
+    "si": 0,
+    "text": "JavaScript",
+    "font": "Inter-Bold",
+    "size": 8.88,
+    "color": 4079166,
+    "bbox": [
+      364.09,
+      252.73,
+      410.49,
+      263.48
+    ],
+    "origin": [
+      364.09,
+      261.34
+    ],
+    "flags": 20
+  },
+  {
+    "bi": 27,
+    "li": 1,
+    "si": 0,
+    "text": "React",
+    "font": "Inter-Bold",
+    "size": 8.88,
+    "color": 4079166,
+    "bbox": [
+      428.26,
+      252.73,
+      453.12,
+      263.48
+    ],
+    "origin": [
+      428.26,
+      261.34
+    ],
+    "flags": 20
+  },
+  {
+    "bi": 27,
+    "li": 2,
+    "si": 0,
+    "text": "HTML",
+    "font": "Inter-Bold",
+    "size": 8.88,
+    "color": 4079166,
+    "bbox": [
+      470.89,
+      252.73,
+      496.61,
+      263.48
+    ],
+    "origin": [
+      470.89,
+      261.34
+    ],
+    "flags": 20
+  },
+  {
+    "bi": 27,
+    "li": 3,
+    "si": 0,
+    "text": "CSS",
+    "font": "Inter-Bold",
+    "size": 8.88,
+    "color": 4079166,
+    "bbox": [
+      514.38,
+      252.73,
+      532.7,
+      263.48
+    ],
+    "origin": [
+      514.38,
+      261.34
+    ],
+    "flags": 20
+  },
+  {
+    "bi": 28,
+    "li": 0,
+    "si": 0,
+    "text": "Git",
+    "font": "Inter-Bold",
+    "size": 8.88,
+    "color": 4079166,
+    "bbox": [
+      364.09,
+      277.47,
+      377.01,
+      288.22
+    ],
+    "origin": [
+      364.09,
+      286.07
+    ],
+    "flags": 20
+  },
+  {
+    "bi": 29,
+    "li": 0,
+    "si": 0,
+    "text": "PROJECTS",
+    "font": "Rubik-Medium",
+    "size": 12.69,
+    "color": 0,
+    "bbox": [
+      358.38,
+      304.02,
+      424.71,
+      319.06
+    ],
+    "origin": [
+      358.38,
+      315.89
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 30,
+    "li": 0,
+    "si": 0,
+    "text": "Flowcreator",
+    "font": "Rubik-Medium",
+    "size": 10.78,
+    "color": 0,
+    "bbox": [
+      358.38,
+      324.2,
+      421.19,
+      336.98
+    ],
+    "origin": [
+      358.38,
+      334.28
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 31,
+    "li": 0,
+    "si": 0,
+    "text": "11/2025 - 02/2026\u00a0",
+    "font": "Inter-Regular",
+    "size": 7.61,
+    "color": 4079166,
+    "bbox": [
+      369.8,
+      339.59,
+      438.9,
+      348.8
+    ],
+    "origin": [
+      369.8,
+      346.97
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 31,
+    "li": 1,
+    "si": 0,
+    "text": "Ahmedabad, India",
+    "font": "Inter-Regular",
+    "size": 7.61,
+    "color": 4079166,
+    "bbox": [
+      458.33,
+      339.59,
+      523.34,
+      348.8
+    ],
+    "origin": [
+      458.33,
+      346.97
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 32,
+    "li": 0,
+    "si": 0,
+    "text": "An AI-powered platform for generating captions ",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      358.38,
+      351.66,
+      546.86,
+      361.64
+    ],
+    "origin": [
+      358.38,
+      359.65
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 32,
+    "li": 1,
+    "si": 0,
+    "text": "and images for social media",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      358.38,
+      361.81,
+      467.04,
+      371.79
+    ],
+    "origin": [
+      358.38,
+      369.8
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 33,
+    "li": 0,
+    "si": 0,
+    "text": "Created an AI-powered platform for generating ",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      370.01,
+      373.87,
+      555.52,
+      383.84
+    ],
+    "origin": [
+      370.01,
+      381.85
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 33,
+    "li": 1,
+    "si": 0,
+    "text": "captions and images across multiple social ",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      370.01,
+      384.01,
+      538.5,
+      393.99
+    ],
+    "origin": [
+      370.01,
+      392.0
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 33,
+    "li": 2,
+    "si": 0,
+    "text": "media platforms",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      370.01,
+      394.16,
+      432.91,
+      404.14
+    ],
+    "origin": [
+      370.01,
+      402.15
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 33,
+    "li": 3,
+    "si": 0,
+    "text": "Incorporated caption generation with prompt ",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      370.01,
+      404.31,
+      547.28,
+      414.29
+    ],
+    "origin": [
+      370.01,
+      412.3
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 33,
+    "li": 4,
+    "si": 0,
+    "text": "enhancement and tone selection features",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      370.01,
+      414.46,
+      531.81,
+      424.44
+    ],
+    "origin": [
+      370.01,
+      422.45
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 33,
+    "li": 5,
+    "si": 0,
+    "text": "Engineered AI-based image generation ",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      370.01,
+      424.61,
+      524.33,
+      434.59
+    ],
+    "origin": [
+      370.01,
+      432.6
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 33,
+    "li": 6,
+    "si": 0,
+    "text": "functionality based on user inputs",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      370.01,
+      434.76,
+      501.88,
+      444.74
+    ],
+    "origin": [
+      370.01,
+      442.75
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 33,
+    "li": 7,
+    "si": 0,
+    "text": "Architected scheduling and publishing ",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      370.01,
+      444.91,
+      521.15,
+      454.89
+    ],
+    "origin": [
+      370.01,
+      452.9
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 33,
+    "li": 8,
+    "si": 0,
+    "text": "workflows for automated content posting",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      370.01,
+      455.06,
+      530.78,
+      465.04
+    ],
+    "origin": [
+      370.01,
+      463.05
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 33,
+    "li": 9,
+    "si": 0,
+    "text": "Established SaaS-based architecture with role-",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      370.01,
+      465.21,
+      553.83,
+      475.19
+    ],
+    "origin": [
+      370.01,
+      473.19
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 33,
+    "li": 10,
+    "si": 0,
+    "text": "based access control and subscription billing",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      370.01,
+      475.35,
+      545.31,
+      485.33
+    ],
+    "origin": [
+      370.01,
+      483.34
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 34,
+    "li": 0,
+    "si": 0,
+    "text": "Meditation App",
+    "font": "Rubik-Medium",
+    "size": 10.78,
+    "color": 0,
+    "bbox": [
+      358.38,
+      492.29,
+      437.16,
+      505.07
+    ],
+    "origin": [
+      358.38,
+      502.37
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 35,
+    "li": 0,
+    "si": 0,
+    "text": "03/2026\u00a0",
+    "font": "Inter-Regular",
+    "size": 7.61,
+    "color": 4079166,
+    "bbox": [
+      369.8,
+      507.68,
+      402.97,
+      516.9
+    ],
+    "origin": [
+      369.8,
+      515.06
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 35,
+    "li": 1,
+    "si": 0,
+    "text": "Ahmedabad, India",
+    "font": "Inter-Regular",
+    "size": 7.61,
+    "color": 4079166,
+    "bbox": [
+      422.4,
+      507.68,
+      487.41,
+      516.9
+    ],
+    "origin": [
+      422.4,
+      515.06
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 36,
+    "li": 0,
+    "si": 0,
+    "text": "A meditation app for user management and ",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      358.38,
+      519.76,
+      529.55,
+      529.74
+    ],
+    "origin": [
+      358.38,
+      527.74
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 36,
+    "li": 1,
+    "si": 0,
+    "text": "session tracking",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      358.38,
+      529.91,
+      421.75,
+      539.88
+    ],
+    "origin": [
+      358.38,
+      537.89
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 37,
+    "li": 0,
+    "si": 0,
+    "text": "Engineered RESTful APIs using Django for user ",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      370.01,
+      541.96,
+      554.01,
+      551.94
+    ],
+    "origin": [
+      370.01,
+      549.95
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 37,
+    "li": 1,
+    "si": 0,
+    "text": "management and meditation session tracking",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      370.01,
+      552.11,
+      547.24,
+      562.09
+    ],
+    "origin": [
+      370.01,
+      560.09
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 37,
+    "li": 2,
+    "si": 0,
+    "text": "Structured and managed PostgreSQL database ",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      370.01,
+      562.26,
+      556.41,
+      572.23
+    ],
+    "origin": [
+      370.01,
+      570.24
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 37,
+    "li": 3,
+    "si": 0,
+    "text": "for storing user profiles and session records",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      370.01,
+      572.4,
+      541.25,
+      582.38
+    ],
+    "origin": [
+      370.01,
+      580.39
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 37,
+    "li": 4,
+    "si": 0,
+    "text": "Applied backend features including session ",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      370.01,
+      582.55,
+      541.04,
+      592.53
+    ],
+    "origin": [
+      370.01,
+      590.54
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 37,
+    "li": 5,
+    "si": 0,
+    "text": "completion tracking and user activity ",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      370.01,
+      592.7,
+      516.31,
+      602.68
+    ],
+    "origin": [
+      370.01,
+      600.69
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 37,
+    "li": 6,
+    "si": 0,
+    "text": "management",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      370.01,
+      602.85,
+      420.93,
+      612.83
+    ],
+    "origin": [
+      370.01,
+      610.84
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 37,
+    "li": 7,
+    "si": 0,
+    "text": "Handled backend logic for storing and updating ",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      370.01,
+      613.0,
+      557.52,
+      622.98
+    ],
+    "origin": [
+      370.01,
+      620.99
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 37,
+    "li": 8,
+    "si": 0,
+    "text": "user-related data efficiently",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      370.01,
+      623.15,
+      478.25,
+      633.13
+    ],
+    "origin": [
+      370.01,
+      631.14
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 37,
+    "li": 9,
+    "si": 0,
+    "text": "Ensured seamless frontend-backend ",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      370.01,
+      633.3,
+      515.55,
+      643.28
+    ],
+    "origin": [
+      370.01,
+      641.29
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 37,
+    "li": 10,
+    "si": 0,
+    "text": "communication through structured, well-",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      370.01,
+      643.45,
+      528.63,
+      653.43
+    ],
+    "origin": [
+      370.01,
+      651.43
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 37,
+    "li": 11,
+    "si": 0,
+    "text": "documented APIs",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      370.01,
+      653.6,
+      438.73,
+      663.58
+    ],
+    "origin": [
+      370.01,
+      661.58
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 38,
+    "li": 0,
+    "si": 0,
+    "text": "www.enhancv.com",
+    "font": "Inter-Regular",
+    "size": 6.98,
+    "color": 4079166,
+    "bbox": [
+      41.86,
+      803.25,
+      104.16,
+      811.7
+    ],
+    "origin": [
+      41.86,
+      810.01
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 38,
+    "li": 1,
+    "si": 0,
+    "text": "\u200b",
+    "font": "resumeicons",
+    "size": 63.43,
+    "color": 4079166,
+    "bbox": [
+      485.25,
+      773.89,
+      548.68,
+      839.55
+    ],
+    "origin": [
+      485.25,
+      838.56
+    ],
+    "flags": 12
+  },
+  {
+    "bi": 39,
+    "li": 0,
+    "si": 0,
+    "text": "Powered by",
+    "font": "Inter-Regular",
+    "size": 6.98,
+    "color": 4079166,
+    "bbox": [
+      434.5,
+      801.98,
+      473.44,
+      810.43
+    ],
+    "origin": [
+      434.5,
+      808.74
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 40,
+    "li": 0,
+    "si": 0,
+    "text": "\u2022",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      41.23,
+      296.48,
+      45.87,
+      306.46
+    ],
+    "origin": [
+      41.23,
+      304.47
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 41,
+    "li": 0,
+    "si": 0,
+    "text": "\u2022",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      41.23,
+      316.78,
+      45.87,
+      326.76
+    ],
+    "origin": [
+      41.23,
+      324.77
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 42,
+    "li": 0,
+    "si": 0,
+    "text": "\u2022",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      41.23,
+      337.08,
+      45.87,
+      347.06
+    ],
+    "origin": [
+      41.23,
+      345.06
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 43,
+    "li": 0,
+    "si": 0,
+    "text": "\u2022",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      41.23,
+      357.37,
+      45.87,
+      367.35
+    ],
+    "origin": [
+      41.23,
+      365.36
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 44,
+    "li": 0,
+    "si": 0,
+    "text": "\u2022",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      41.23,
+      427.78,
+      45.87,
+      437.76
+    ],
+    "origin": [
+      41.23,
+      435.77
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 45,
+    "li": 0,
+    "si": 0,
+    "text": "\u2022",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      41.23,
+      448.08,
+      45.87,
+      458.06
+    ],
+    "origin": [
+      41.23,
+      456.07
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 46,
+    "li": 0,
+    "si": 0,
+    "text": "\u2022",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      41.23,
+      468.38,
+      45.87,
+      478.36
+    ],
+    "origin": [
+      41.23,
+      476.37
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 46,
+    "li": 1,
+    "si": 0,
+    "text": "\u2022",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      41.23,
+      478.53,
+      45.87,
+      488.51
+    ],
+    "origin": [
+      41.23,
+      486.51
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 47,
+    "li": 0,
+    "si": 0,
+    "text": "\u2022",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      41.23,
+      559.08,
+      45.87,
+      569.06
+    ],
+    "origin": [
+      41.23,
+      567.07
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 48,
+    "li": 0,
+    "si": 0,
+    "text": "\u2022",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      41.23,
+      579.38,
+      45.87,
+      589.36
+    ],
+    "origin": [
+      41.23,
+      587.37
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 49,
+    "li": 0,
+    "si": 0,
+    "text": "\u2022",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      41.23,
+      599.68,
+      45.87,
+      609.66
+    ],
+    "origin": [
+      41.23,
+      607.67
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 50,
+    "li": 0,
+    "si": 0,
+    "text": "\u2022",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      41.23,
+      619.98,
+      45.87,
+      629.96
+    ],
+    "origin": [
+      41.23,
+      627.97
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 51,
+    "li": 0,
+    "si": 0,
+    "text": "\u2022",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      360.92,
+      373.87,
+      365.56,
+      383.84
+    ],
+    "origin": [
+      360.92,
+      381.85
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 52,
+    "li": 0,
+    "si": 0,
+    "text": "\u2022",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      360.92,
+      404.31,
+      365.56,
+      414.29
+    ],
+    "origin": [
+      360.92,
+      412.3
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 53,
+    "li": 0,
+    "si": 0,
+    "text": "\u2022",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      360.92,
+      424.61,
+      365.56,
+      434.59
+    ],
+    "origin": [
+      360.92,
+      432.6
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 54,
+    "li": 0,
+    "si": 0,
+    "text": "\u2022",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      360.92,
+      444.91,
+      365.56,
+      454.89
+    ],
+    "origin": [
+      360.92,
+      452.9
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 55,
+    "li": 0,
+    "si": 0,
+    "text": "\u2022",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      360.92,
+      465.21,
+      365.56,
+      475.19
+    ],
+    "origin": [
+      360.92,
+      473.19
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 56,
+    "li": 0,
+    "si": 0,
+    "text": "\u2022",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      360.92,
+      541.96,
+      365.56,
+      551.94
+    ],
+    "origin": [
+      360.92,
+      549.95
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 57,
+    "li": 0,
+    "si": 0,
+    "text": "\u2022",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      360.92,
+      562.26,
+      365.56,
+      572.23
+    ],
+    "origin": [
+      360.92,
+      570.24
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 58,
+    "li": 0,
+    "si": 0,
+    "text": "\u2022",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      360.92,
+      582.55,
+      365.56,
+      592.53
+    ],
+    "origin": [
+      360.92,
+      590.54
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 59,
+    "li": 0,
+    "si": 0,
+    "text": "\u2022",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      360.92,
+      613.0,
+      365.56,
+      622.98
+    ],
+    "origin": [
+      360.92,
+      620.99
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 60,
+    "li": 0,
+    "si": 0,
+    "text": "\u2022",
+    "font": "Inter-Regular",
+    "size": 8.25,
+    "color": 4079166,
+    "bbox": [
+      360.92,
+      633.3,
+      365.56,
+      643.28
+    ],
+    "origin": [
+      360.92,
+      641.29
+    ],
+    "flags": 4
+  },
+  {
+    "bi": 61,
+    "li": 0,
+    "si": 0,
+    "text": "\u200b",
+    "font": "resumeicons",
+    "size": 7.61,
+    "color": 36095,
+    "bbox": [
+      38.69,
+      82.31,
+      46.3,
+      90.19
+    ],
+    "origin": [
+      38.69,
+      90.07
+    ],
+    "flags": 12
+  },
+  {
+    "bi": 61,
+    "li": 1,
+    "si": 0,
+    "text": "\u200b",
+    "font": "resumeicons",
+    "size": 7.61,
+    "color": 36095,
+    "bbox": [
+      113.67,
+      82.31,
+      121.28,
+      90.19
+    ],
+    "origin": [
+      113.67,
+      90.07
+    ],
+    "flags": 12
+  },
+  {
+    "bi": 61,
+    "li": 2,
+    "si": 0,
+    "text": "\u200b",
+    "font": "resumeicons",
+    "size": 7.61,
+    "color": 36095,
+    "bbox": [
+      266.64,
+      82.31,
+      274.25,
+      90.19
+    ],
+    "origin": [
+      266.64,
+      90.07
+    ],
+    "flags": 12
+  },
+  {
+    "bi": 61,
+    "li": 3,
+    "si": 0,
+    "text": "\u200b",
+    "font": "resumeicons",
+    "size": 7.61,
+    "color": 36095,
+    "bbox": [
+      38.69,
+      93.09,
+      46.3,
+      100.97
+    ],
+    "origin": [
+      38.69,
+      100.86
+    ],
+    "flags": 12
+  }
+]
