@@ -11,11 +11,24 @@ import urllib.request
 
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 DEFAULT_MODELS = (
-    "openai/gpt-oss-120b",
     "openai/gpt-oss-20b",
-    "llama-3.1-8b-instant",
+    "openai/gpt-oss-120b",
 )
-MAX_DIFF_CHARS = 60_000
+UNAVAILABLE_MODELS = {
+    "llama-3.1-8b-instant",
+    "llama-3.3-70b-versatile",
+    "mixtral-8x7b-32768",
+    "llama-2-70b-chat",
+}
+# Keep well under the 8000 TPM free-tier cap (~4 chars/token).
+MAX_DIFF_CHARS = 9000
+SHORT_PROMPT = (
+    "You review a GitHub pull request into main. Be concise. "
+    "Reply with Markdown headings: ## Summary, ## What to improve "
+    "(table: Severity | Location | Finding), ## Code suggestions "
+    "(only High/Medium, short snippets), ## Merge advice (one line). "
+    "Focus on bugs, security, and broken UX. Skip formatting nits."
+)
 GITHUB_API = "https://api.github.com"
 
 
@@ -99,17 +112,11 @@ def post_pr_comment(repo: str, pr_number: str, token: str, body: str) -> None:
 def groq_review(api_key: str, model: str, prompt: str, diff: str) -> str:
     payload = {
         "model": model,
-        "max_completion_tokens": 4096,
+        "max_completion_tokens": 1200,
         "messages": [
             {
                 "role": "user",
-                "content": (
-                    f"{prompt}\n\n"
-                    "Review this GitHub pull request diff. Base branch is main. "
-                    "Write Markdown with these headings: ## Summary, "
-                    "## What to improve, ## Code suggestions, ## Merge advice.\n\n"
-                    f"```diff\n{diff}\n```"
-                ),
+                "content": f"{prompt}\n\n```diff\n{diff}\n```",
             }
         ],
     }
@@ -132,13 +139,17 @@ def groq_review(api_key: str, model: str, prompt: str, diff: str) -> str:
 
 
 def load_prompt() -> str:
-    path = os.path.join(".github", "copilot-instructions.md")
-    if os.path.isfile(path):
-        return open(path, encoding="utf-8").read().strip()
-    return (
-        "You are reviewing a GitHub pull request into main. "
-        "Reply with Summary, What to improve (table), Code suggestions, and Merge advice."
-    )
+    return SHORT_PROMPT
+
+
+def model_list(requested: str) -> list[str]:
+    models = []
+    if requested and requested not in UNAVAILABLE_MODELS:
+        models.append(requested)
+    for model in DEFAULT_MODELS:
+        if model not in models:
+            models.append(model)
+    return models
 
 
 def main() -> int:
@@ -182,9 +193,9 @@ def main() -> int:
         return 0
 
     if len(diff) > MAX_DIFF_CHARS:
-        diff = diff[:MAX_DIFF_CHARS] + "\n\n[diff truncated]"
+        diff = diff[:MAX_DIFF_CHARS] + "\n\n[diff truncated to fit Groq token limit]"
 
-    models = [requested_model] if requested_model else list(DEFAULT_MODELS)
+    models = model_list(requested_model)
     last_error = None
     review = None
     used_model = models[0]

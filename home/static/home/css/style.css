@@ -436,7 +436,7 @@ h4 {
 }
 
 .section--alt {
-  background: var(--bg-alt);
+  background: color-mix(in srgb, var(--bg-alt) 42%, transparent);
   border-block: 1px solid var(--border);
 }
 
@@ -701,22 +701,27 @@ h4 {
   list-style: none;
   padding: 0;
   margin: 2rem 0 0;
+  display: grid;
+  gap: 1rem;
 }
 
 .edu__item {
   display: grid;
   grid-template-columns: 9.5rem 1fr;
   gap: 1.25rem;
-  padding: 1.2rem 0.9rem;
-  margin: 0 -0.9rem;
-  border-bottom: 1px solid var(--border);
-  border-radius: 12px;
-  transition: background 0.22s ease, transform 0.22s ease;
+  padding: 1.25rem 1.35rem;
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--surface) 58%, transparent);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 .edu__item:hover {
   background: var(--surface);
-  transform: translateX(4px);
+  transform: translateY(-4px);
+  border-color: rgba(212, 255, 63, 0.35);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.28);
 }
 
 .edu__item:hover h3 {
@@ -1279,7 +1284,7 @@ a.connect-item:focus-visible .connect-icon {
 }
 
 .edu__item.reveal.is-in:hover {
-  transform: translateX(4px);
+  transform: translateY(-4px);
 }
 
 @media (min-width: 640px) {
