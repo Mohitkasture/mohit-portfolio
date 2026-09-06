@@ -2,10 +2,10 @@ This is a personal Django 6.1 portfolio site (Python, HTML, CSS, a little JavaSc
 
 When you review a pull request on GitHub, always reply on the PR with:
 
-1. **Summary** — what changed.
-2. **Critical** — blocking bugs/security. Include suggested fix code.
-3. **Major** — should-fix issues. Include suggested fix code.
+1. **Summary** — 3 short bullets.
+2. **Critical** — blocking bugs/security. Each item must include **suggested fix code**.
+3. **Major** — should-fix issues. Each item must include **suggested fix code**.
 4. **Minor** — small nits, bullets only.
-5. **Merge advice** — safe to merge, or fix first.
+5. **Merge advice** — one line.
 
-Do not use High/Medium/Low. Review only the diff.
+Do not use High/Medium/Low. Review only the PR diff.

@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import json
 import os
+import subprocess
 import sys
 import urllib.error
 import urllib.request
@@ -128,11 +129,34 @@ def wrap_review(raw: str, model: str) -> str:
         body = "## Summary\n\n" + body
     return (
         "## AI review (Groq)\n\n"
-        "Severity: **Critical** · **Major** · **Minor**\n"
-        "Critical and Major include **suggested fix code** you can paste into the PR.\n\n"
+        "Issues are grouped as **Critical**, **Major**, and **Minor**.\n"
+        "For **Critical** and **Major**, copy the **suggested fix** into the PR "
+        "(or use GitHub Copilot **Fix with AI** on that snippet).\n\n"
         f"{body}\n\n"
         "---\n"
         f"_Automatic review for PRs into `main` · `{model}`._\n"
+    )
+
+
+def write_review_file(body: str) -> str:
+    path = os.path.abspath("groq-review.md")
+    with open(path, "w", encoding="utf-8") as handle:
+        handle.write(body)
+    summary = os.environ.get("GITHUB_STEP_SUMMARY")
+    if summary:
+        with open(summary, "a", encoding="utf-8") as handle:
+            handle.write(body)
+            handle.write("\n")
+    return path
+
+
+def post_via_gh(pr_number: str, body_path: str) -> None:
+    env = os.environ.copy()
+    if not env.get("GH_TOKEN") and env.get("GITHUB_TOKEN"):
+        env["GH_TOKEN"] = env["GITHUB_TOKEN"]
+    subprocess.check_call(
+        ["gh", "pr", "comment", pr_number, "--body-file", body_path],
+        env=env,
     )
 
 
@@ -207,20 +231,27 @@ def model_list(requested: str) -> list[str]:
 
 
 def publish(repo: str, pr_number: str, token: str, commit_id: str, body: str) -> None:
+    path = write_review_file(body)
     errors = []
+    try:
+        post_via_gh(pr_number, path)
+        print("Posted PR conversation comment with gh.")
+    except Exception as exc:
+        errors.append(f"gh pr comment: {exc}")
+        print(exc, file=sys.stderr)
     try:
         post_pr_review(repo, pr_number, token, body, commit_id)
         print("Posted GitHub pull request review.")
     except Exception as exc:
-        errors.append(str(exc))
+        errors.append(f"reviews API: {exc}")
         print(exc, file=sys.stderr)
     try:
         post_issue_comment(repo, pr_number, token, body)
-        print("Posted GitHub conversation comment.")
+        print("Posted GitHub issues comment.")
     except Exception as exc:
-        errors.append(str(exc))
+        errors.append(f"issues API: {exc}")
         print(exc, file=sys.stderr)
-    if len(errors) == 2:
+    if len(errors) == 3:
         raise RuntimeError("Failed to post review to GitHub:\n" + "\n".join(errors))
 
 

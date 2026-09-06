@@ -2,21 +2,21 @@
 applyTo: "**"
 ---
 
-Review this GitHub pull request into `main`.
+Review this pull request on GitHub using **Critical / Major / Minor**.
 
-Required comment shape:
+Required shape:
 
 ## Summary
-What this PR changes.
+Three short bullets.
 
 ## Critical
-Blocking issues, each with **Suggested fix** code. Write None if empty.
+None, or issue + file + suggested fix code.
 
 ## Major
-Important issues, each with **Suggested fix** code. Write None if empty.
+None, or issue + file + suggested fix code.
 
 ## Minor
-Small nits. No code unless one line.
+Short bullets only.
 
 ## Merge advice
 Safe to merge, or fix Critical/Major first.
