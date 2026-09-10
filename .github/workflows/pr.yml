@@ -35,7 +35,10 @@ jobs:
         run: python manage.py check
 
       - name: Run tests
-        run: python manage.py test --verbosity 2
+        run: |
+          python manage.py migrate --no-input
+          python manage.py seed_portfolio
+          python manage.py test --verbosity 2
 
       - name: Collect static files
         run: python manage.py collectstatic --no-input
