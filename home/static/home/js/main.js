@@ -38,18 +38,90 @@
     .map((link) => document.getElementById(link.getAttribute("href").slice(1)))
     .filter(Boolean);
 
-  const setActiveNav = () => {
-    let current = null;
-    const offset = 120;
-    sectionEls.forEach((section) => {
-      if (section.getBoundingClientRect().top - offset <= 0) current = section;
-    });
+  const clearHashFromUrl = () => {
+    if (!window.location.hash) return;
+    const clean = window.location.pathname + window.location.search;
+    window.history.replaceState(null, "", clean);
+  };
+
+  const getScrollOffset = () => {
+    const raw = getComputedStyle(document.documentElement).scrollPaddingTop;
+    const pad = Number.parseFloat(raw);
+    return Number.isFinite(pad) ? pad : 88;
+  };
+
+  // Use section padding edge — ignores .reveal translateY which skews getBoundingClientRect
+  const getSectionContentTop = (section) => {
+    const padTop = Number.parseFloat(getComputedStyle(section).paddingTop) || 0;
+    return section.getBoundingClientRect().top + padTop;
+  };
+
+  const setActiveFromId = (id) => {
     navLinks.forEach((link) => {
-      const on = current && link.getAttribute("href") === "#" + current.id;
-      link.classList.toggle("is-active", Boolean(on));
+      const on = Boolean(id) && link.getAttribute("href") === "#" + id;
+      link.classList.toggle("is-active", on);
       if (on) link.setAttribute("aria-current", "location");
       else link.removeAttribute("aria-current");
     });
+  };
+
+  const scrollToId = (id) => {
+    const behavior = reduceMotion ? "auto" : "smooth";
+    if (!id || id === "top") {
+      window.scrollTo({ top: 0, behavior });
+      clearHashFromUrl();
+      setActiveFromId(null);
+      return;
+    }
+    const section = document.getElementById(id);
+    if (!section) return;
+    const top =
+      window.scrollY + getSectionContentTop(section) - getScrollOffset();
+    window.scrollTo({ top: Math.max(0, top), behavior });
+    clearHashFromUrl();
+    setActiveFromId(id);
+  };
+
+  // In-page links scroll without leaving #section in the address bar
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const href = link.getAttribute("href");
+      if (!href || href === "#") return;
+      const id = href.slice(1);
+      if (!document.getElementById(id) && id !== "top") return;
+      event.preventDefault();
+      event.stopPropagation();
+      scrollToId(id);
+      closeMenu();
+    });
+  });
+
+  if (window.location.hash) {
+    const initialId = window.location.hash.slice(1);
+    requestAnimationFrame(() => scrollToId(initialId));
+  }
+
+  const setActiveNav = () => {
+    const offset = getScrollOffset() + 8;
+    let current = null;
+    sectionEls.forEach((section) => {
+      if (getSectionContentTop(section) - offset <= 0) current = section;
+    });
+
+    // Last sections can't always reach sticky offset — activate last when at page end
+    const maxScroll = Math.max(
+      0,
+      document.documentElement.scrollHeight - window.innerHeight
+    );
+    if (sectionEls.length && window.scrollY >= maxScroll - 2) {
+      current = sectionEls[sectionEls.length - 1];
+    }
+
+    if (!current && window.scrollY < 40) {
+      setActiveFromId(null);
+      return;
+    }
+    setActiveFromId(current ? current.id : null);
   };
   setActiveNav();
   window.addEventListener("scroll", setActiveNav, { passive: true });
@@ -70,6 +142,69 @@
       { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
     );
     reveals.forEach((el) => io.observe(el));
+  }
+
+  // Hero typing roles
+  const typedEl = document.getElementById("typed-role");
+  if (typedEl) {
+    const roles = [
+      "Python Backend Developer",
+      "Django Developer",
+      "AI Developer",
+    ];
+    if (reduceMotion) {
+      typedEl.textContent = roles[0];
+    } else {
+      let roleIndex = 0;
+      let charIndex = 0;
+      let deleting = false;
+      const typeSpeed = 70;
+      const deleteSpeed = 40;
+      const holdMs = 1600;
+
+      const tickType = () => {
+        const current = roles[roleIndex];
+        if (!deleting) {
+          charIndex += 1;
+          typedEl.textContent = current.slice(0, charIndex);
+          if (charIndex >= current.length) {
+            deleting = true;
+            setTimeout(tickType, holdMs);
+            return;
+          }
+          setTimeout(tickType, typeSpeed);
+          return;
+        }
+        charIndex -= 1;
+        typedEl.textContent = current.slice(0, Math.max(0, charIndex));
+        if (charIndex <= 0) {
+          deleting = false;
+          roleIndex = (roleIndex + 1) % roles.length;
+          setTimeout(tickType, 280);
+          return;
+        }
+        setTimeout(tickType, deleteSpeed);
+      };
+      tickType();
+    }
+  }
+
+  // Experience timeline fill on scroll
+  const timeline = document.getElementById("experience-timeline");
+  const timelineProgress = document.getElementById("timeline-progress");
+  if (timeline && timelineProgress) {
+    const updateTimeline = () => {
+      const rect = timeline.getBoundingClientRect();
+      const view = window.innerHeight || 800;
+      const start = view * 0.75;
+      const end = view * 0.25;
+      const raw = (start - rect.top) / (start - end + rect.height);
+      const pct = Math.max(0, Math.min(1, raw)) * 100;
+      timelineProgress.style.height = pct + "%";
+    };
+    updateTimeline();
+    window.addEventListener("scroll", updateTimeline, { passive: true });
+    window.addEventListener("resize", updateTimeline, { passive: true });
   }
 
   const canvas = document.getElementById("net-bg");
@@ -138,7 +273,10 @@
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(212, 255, 63, 0.85)";
+        const accent2 = getComputedStyle(document.documentElement)
+          .getPropertyValue("--accent-2-rgb")
+          .trim() || "20, 184, 166";
+        ctx.fillStyle = `rgba(${accent2}, 0.85)`;
         ctx.fill();
       });
 
@@ -151,7 +289,10 @@
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(b.x, b.y);
-            ctx.strokeStyle = `rgba(212, 255, 63, ${0.38 * (1 - d / link)})`;
+            const accent = getComputedStyle(document.documentElement)
+              .getPropertyValue("--accent-rgb")
+              .trim() || "34, 197, 94";
+            ctx.strokeStyle = `rgba(${accent}, ${0.42 * (1 - d / link)})`;
             ctx.lineWidth = 1.05;
             ctx.stroke();
           }
@@ -370,6 +511,304 @@
       } finally {
         setSubmitting(false);
       }
+    });
+  }
+
+  const track = (eventType, label = "", metadata = {}) => {
+    fetch("/api/analytics/track/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      credentials: "same-origin",
+      body: JSON.stringify({
+        event_type: eventType,
+        path: window.location.pathname,
+        label,
+        metadata,
+      }),
+    }).catch(() => {});
+  };
+
+  document.querySelectorAll("[data-track]").forEach((el) => {
+    el.addEventListener("click", () => {
+      track(el.getAttribute("data-track"), el.getAttribute("data-track-label") || el.textContent.trim());
+    });
+  });
+
+  const askAssistant = async (question, logEl) => {
+    const user = document.createElement("p");
+    user.className = "ai-bubble ai-bubble--user";
+    user.textContent = question;
+    logEl.appendChild(user);
+    const pending = document.createElement("p");
+    pending.className = "ai-bubble";
+    pending.textContent = "Thinking…";
+    logEl.appendChild(pending);
+    logEl.scrollTop = logEl.scrollHeight;
+    try {
+      const res = await fetch("/api/assistant/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ question }),
+      });
+      const data = await res.json();
+      pending.textContent = data.answer || data.detail || "No answer.";
+      pending.style.whiteSpace = "pre-wrap";
+    } catch (_) {
+      pending.textContent = "Assistant is unavailable right now.";
+    }
+    logEl.scrollTop = logEl.scrollHeight;
+  };
+
+  const aiForm = document.getElementById("ai-form");
+  const aiLog = document.getElementById("ai-log");
+  if (aiForm && aiLog) {
+    aiForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const input = document.getElementById("ai-question");
+      const q = (input.value || "").trim();
+      if (!q) return;
+      input.value = "";
+      askAssistant(q, aiLog);
+    });
+  }
+
+  const fabBtn = document.getElementById("ai-fab-btn");
+  const fabPanel = document.getElementById("ai-fab-panel");
+  const fabBackdrop = document.getElementById("ai-fab-backdrop");
+  const fabForm = document.getElementById("ai-fab-form");
+  const fabLog = document.getElementById("ai-fab-log");
+  if (fabBtn && fabPanel) {
+    const setFabOpen = (open) => {
+      if (open) {
+        fabPanel.removeAttribute("hidden");
+        if (fabBackdrop) fabBackdrop.removeAttribute("hidden");
+      } else {
+        fabPanel.setAttribute("hidden", "");
+        if (fabBackdrop) fabBackdrop.setAttribute("hidden", "");
+      }
+      fabBtn.setAttribute("aria-expanded", String(open));
+    };
+    fabBtn.addEventListener("click", () => {
+      setFabOpen(fabPanel.hasAttribute("hidden"));
+    });
+    if (fabBackdrop) {
+      fabBackdrop.addEventListener("click", () => setFabOpen(false));
+    }
+  }
+  if (fabForm && fabLog) {
+    fabForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const input = document.getElementById("ai-fab-input");
+      const q = (input.value || "").trim();
+      if (!q) return;
+      input.value = "";
+      askAssistant(q, fabLog);
+    });
+  }
+
+  const searchForm = document.getElementById("project-search-form");
+  const searchOut = document.getElementById("project-search-results");
+  if (searchForm && searchOut) {
+    searchForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const q = (document.getElementById("project-search-q").value || "").trim();
+      if (!q) return;
+      searchOut.hidden = false;
+      searchOut.innerHTML = "<p class='nl-search__hit'>Searching…</p>";
+      try {
+        const res = await fetch("/api/projects/search/?q=" + encodeURIComponent(q));
+        const data = await res.json();
+        if (!data.results || !data.results.length) {
+          searchOut.innerHTML = "<p class='nl-search__hit'>No matching projects.</p>";
+          return;
+        }
+        searchOut.innerHTML = data.results
+          .map((hit) => {
+            const p = hit.project;
+            const tags = (p.tech_stack || []).slice(0, 6).join(" · ");
+            return (
+              "<article class='nl-search__hit'><strong>" +
+              p.title +
+              "</strong> <span style='opacity:.7'>(" +
+              hit.score +
+              ")</span><br>" +
+              (p.tagline || p.overview || "").slice(0, 160) +
+              "<br><span style='font-family:var(--mono);font-size:.8rem;color:var(--accent)'>" +
+              tags +
+              "</span></article>"
+            );
+          })
+          .join("");
+      } catch (_) {
+        searchOut.innerHTML = "<p class='nl-search__hit'>Search failed.</p>";
+      }
+    });
+  }
+
+  const resumeForm = document.getElementById("resume-analyze-form");
+  const resumeOut = document.getElementById("resume-analyze-out");
+
+  const escapeHtml = (value) =>
+    String(value ?? "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+
+  const chipRow = (items, variant) => {
+    const list = Array.isArray(items) ? items.filter(Boolean) : [];
+    if (!list.length) return '<p class="analyzer__empty">None found</p>';
+    const cls = variant ? `analyzer__chip analyzer__chip--${variant}` : "analyzer__chip";
+    return `<div class="analyzer__chips">${list
+      .map((item) => `<span class="${cls}">${escapeHtml(item)}</span>`)
+      .join("")}</div>`;
+  };
+
+  const suggestionList = (raw) => {
+    const text = String(raw || "").trim();
+    if (!text) return '<p class="analyzer__empty">No suggestions yet.</p>';
+    const lines = text
+      .split(/\n+/)
+      .map((line) => line.replace(/^[-*•\d.)\s]+/, "").trim())
+      .filter(Boolean);
+    if (!lines.length) return `<p class="analyzer__empty">${escapeHtml(text)}</p>`;
+    return `<ul class="analyzer__list">${lines
+      .map((line) => `<li>${escapeHtml(line)}</li>`)
+      .join("")}</ul>`;
+  };
+
+  const renderResumeResult = (data) => {
+    if (!data || data.detail) {
+      return `<p class="analyzer__status analyzer__status--error">${escapeHtml(
+        data?.detail || "Analysis failed."
+      )}</p>`;
+    }
+    const scores = data.scores || {};
+    const extracted = data.extracted || {};
+    const ats = Number(scores.ats_score) || 0;
+    const mode = data.mode || "rules";
+    const contactBits = [
+      ...(extracted.emails || []),
+      ...(extracted.phones || []),
+      ...(extracted.github || []),
+      ...(extracted.linkedin || []),
+    ];
+
+    return `
+      <div class="analyzer__results">
+        <div class="analyzer__hero">
+          <div class="analyzer__score-main">
+            <div class="analyzer__score-ring" style="--pct:${Math.max(0, Math.min(100, ats))}">
+              <strong>${escapeHtml(ats)}</strong>
+            </div>
+            <div class="analyzer__score-copy">
+              <h4>ATS-style score</h4>
+              <p>Deterministic scoring · mode: ${escapeHtml(mode)}</p>
+            </div>
+          </div>
+          <div class="analyzer__score-grid">
+            <div class="analyzer__metric"><span>Skills</span><strong>${escapeHtml(scores.skills_match ?? "—")}</strong></div>
+            <div class="analyzer__metric"><span>Experience</span><strong>${escapeHtml(scores.experience ?? "—")}</strong></div>
+            <div class="analyzer__metric"><span>Projects</span><strong>${escapeHtml(scores.projects ?? "—")}</strong></div>
+            <div class="analyzer__metric"><span>Contact</span><strong>${escapeHtml(scores.contact ?? "—")}</strong></div>
+          </div>
+        </div>
+
+        <div class="analyzer__block">
+          <h4>Contact &amp; links</h4>
+          ${
+            contactBits.length
+              ? `<div class="analyzer__facts">
+                  <div class="analyzer__fact"><span>Email</span><strong>${escapeHtml((extracted.emails || []).join(", ") || "—")}</strong></div>
+                  <div class="analyzer__fact"><span>Phone</span><strong>${escapeHtml((extracted.phones || []).join(", ") || "—")}</strong></div>
+                  <div class="analyzer__fact"><span>GitHub</span><strong>${escapeHtml((extracted.github || []).join(", ") || "—")}</strong></div>
+                  <div class="analyzer__fact"><span>LinkedIn</span><strong>${escapeHtml((extracted.linkedin || []).join(", ") || "—")}</strong></div>
+                </div>`
+              : '<p class="analyzer__empty">No contact details detected.</p>'
+          }
+        </div>
+
+        <div class="analyzer__block">
+          <h4>Technologies found</h4>
+          ${chipRow(extracted.technologies, "ok")}
+        </div>
+
+        <div class="analyzer__block">
+          <h4>Matched keywords</h4>
+          ${chipRow(extracted.matched_keywords, "ok")}
+        </div>
+
+        <div class="analyzer__block">
+          <h4>Missing keywords</h4>
+          ${chipRow(extracted.missing_keywords, "miss")}
+        </div>
+
+        <div class="analyzer__block">
+          <h4>Improvement suggestions</h4>
+          ${suggestionList(data.suggestions)}
+        </div>
+      </div>
+    `;
+  };
+
+  if (resumeForm && resumeOut) {
+    resumeForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const fileInput = document.getElementById("resume-file");
+      const text = (document.getElementById("resume-text").value || "").trim();
+      const body = new FormData();
+      if (fileInput.files && fileInput.files[0]) body.append("file", fileInput.files[0]);
+      if (text) body.append("text", text);
+      resumeOut.hidden = false;
+      resumeOut.innerHTML = '<p class="analyzer__status">Analyzing…</p>';
+      try {
+        const res = await fetch("/api/resume/analyze/", { method: "POST", body });
+        const data = await res.json();
+        if (!res.ok) {
+          resumeOut.innerHTML = `<p class="analyzer__status analyzer__status--error">${escapeHtml(
+            data.detail || "Analysis failed."
+          )}</p>`;
+          return;
+        }
+        resumeOut.innerHTML = renderResumeResult(data);
+      } catch (_) {
+        resumeOut.innerHTML =
+          '<p class="analyzer__status analyzer__status--error">Analysis failed.</p>';
+      }
+    });
+  }
+
+  const npcForm = document.getElementById("npc-form");
+  const npcLog = document.getElementById("npc-log");
+  if (npcForm && npcLog) {
+    npcForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const input = document.getElementById("npc-message");
+      const message = (input.value || "").trim();
+      if (!message) return;
+      input.value = "";
+      const user = document.createElement("p");
+      user.className = "npc-bubble npc-bubble--user";
+      user.textContent = "You: " + message;
+      npcLog.appendChild(user);
+      try {
+        const res = await fetch("/api/npc/", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify({ message, npc: "guide" }),
+        });
+        const data = await res.json();
+        const bubble = document.createElement("p");
+        bubble.className = "npc-bubble";
+        bubble.innerHTML = "<strong>" + (data.npc || "Asha") + ":</strong> " + (data.reply || "");
+        npcLog.appendChild(bubble);
+      } catch (_) {
+        const bubble = document.createElement("p");
+        bubble.className = "npc-bubble";
+        bubble.textContent = "NPC is offline for a moment.";
+        npcLog.appendChild(bubble);
+      }
+      npcLog.scrollTop = npcLog.scrollHeight;
     });
   }
 })();
